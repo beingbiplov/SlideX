@@ -1,0 +1,38 @@
+@media (max-width: 480px) {
+    .icon {
+        height: 25px;
+        width: 25px;
+        margin: 0 0 2px 4px;
+    }
+    .file_name_input{
+        height: 16px;
+        font-size: 0.875rem; 
+    }
+
+    .top_nav__left__sec2--menu li{
+        font-size: 0.785rem;
+    }
+    .present_btn img {
+        width: 8px;
+        height: 8px;
+        padding-right: 3px;
+    }
+
+    .present_btn {
+        font-size: 0.7rem;
+        letter-spacing: 0.25px;
+        line-height: 12px;
+    }
+    .bottom_nav__left--icon--first {
+        width: 10px;
+        height: 10px;
+    }
+    .bottom_nav__left--icon--second {
+        width: 6px;
+        height: 6px;
+    }
+
+    .top_nav__right{
+        padding-right: 1%;
+    }
+}

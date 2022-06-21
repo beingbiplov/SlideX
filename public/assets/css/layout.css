@@ -10,6 +10,14 @@
     align-items: center;
     width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.bottom_nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+    align-items: center;
 }
 
 .top_nav__left__sec2--menu {
@@ -21,6 +29,19 @@
 
 .header__hr_1{
     margin: -0.5rem 0 0 0 ;
+    height: 1px;
+    background-color: #e5e5e5;
+    border: none;
+}
+
+.bottom_nav{
+    padding:  5px 15px;
+}
+.bottom_nav__left {
+    display: flex;
+    padding: 0 5px;
+    align-items: center;
+    margin-bottom: 5px;
 }
 
 /* header section ends  */
