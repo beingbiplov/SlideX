@@ -74,3 +74,18 @@ body {
 }
 
 /* main content sectin ends  */
+
+
+/* left side panel starts  */
+
+.content_section__left__preview_section{
+    padding: 12px 20px;
+    /* display: flex; */
+}
+
+.slide_preview{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+/* left side panel ends  */
