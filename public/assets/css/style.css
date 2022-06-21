@@ -161,6 +161,10 @@
     padding-right: 4%;
 }
 
+#nav_toggle--btn_down{
+    display: none;
+}
+
 /* header section ends  */
 
 /* main content section starts  */
