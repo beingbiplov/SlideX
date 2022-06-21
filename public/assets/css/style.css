@@ -161,5 +161,38 @@
     padding-right: 4%;
 }
 
-
 /* header section ends  */
+
+/* main content section starts  */
+
+.workspace{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.content_section__main--placeholder a{
+    color: #999;
+    cursor: pointer;
+    font-size: 24px;
+    font-style: italic;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.content_section__main--placeholder {
+    border-radius: 15px;
+    border: 2px dashed #999;
+    cursor: pointer;
+    height: 80%;
+    min-height: 36px;
+    min-width: 250px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+} 
+
+/* main content sectin ends  */

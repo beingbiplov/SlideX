@@ -1,3 +1,7 @@
+body {
+    height: 100vh;
+}
+
 /* header section css  */
 
 .top_nav {
@@ -45,3 +49,28 @@
 }
 
 /* header section ends  */
+
+/* main content section starts  */
+
+.content_section {
+    display: flex;
+}
+
+.content_section__left {
+    width: 13%;
+    /* background-color: rgb(187, 215, 215); */
+    border-right: 2px solid #ebebeb;
+}
+
+.content_section__right{
+    width: 13%;
+    border-left: 2px solid #ebebeb;
+    /* background-color: rgb(143, 145, 118); */
+}
+
+.content_section__main {
+    width: 74%;
+    background-color: #f8f9fa;
+}
+
+/* main content sectin ends  */
