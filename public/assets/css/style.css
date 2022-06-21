@@ -1,0 +1,114 @@
+
+/* header section css  */
+
+.icon {
+    height: 40px;
+    width: 40px;
+    margin: 0 0 4px 8px;
+}
+
+.icon img {
+    height: 100%;
+    width: 100%;
+}
+
+.file_name_input {
+    border: 2px solid transparent;
+    border-radius: 2px;
+    color: #949494;
+    font-size: 1rem;
+    height: 20px;
+    line-height: 22px;
+    margin: 0;
+    min-width: 1px;
+    padding: 2px 7px;
+}
+
+.file_name_input:focus {
+    outline: none !important;
+    border: 2px solid #949494 !important;
+    box-shadow: none;
+    border-radius: 4px;
+    color: #202124;
+    transition: 0.2s;
+}
+
+.file_name_input:hover {
+    border-color: #e5e5e5;
+    transition: 0.2s;
+}
+
+.top_nav__left__sec2--menu li{
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: none;
+    color: #202124;
+    cursor: pointer;
+    font-size: 0.875rem;
+    letter-spacing: .2px;
+    padding: 0 6px 4px 6px;
+}
+
+.top_nav__right--btn{
+    padding: 0 20px 0 0;
+}
+
+.present_btn img {
+    width: 15px;
+    height: 15px;
+    padding-right: 8px;
+}
+
+.present_btn {
+    border: 1px solid #949494;
+    border-radius: 4px;
+    color: #202124;
+    font-size: 0.875rem;
+    letter-spacing: 0.25px;
+    line-height: 16px;
+}
+
+.present_btn:hover {
+    border-color: #feedbc;
+    transition: 0.2s;
+}
+
+.top_nav__left__sec2--menu li:active {
+    background-color: #fde293;
+}
+
+.top_nav__left__sec2--menu li:hover {
+    background-color: #e5e5e5;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    font-size: 0.8rem;
+    padding-left: 50%;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content p {
+    padding: 12px;
+    margin: 0;
+}
+
+.dropdown-content p:hover {
+    padding:12px;
+    background-color: #e5e5e5;
+}
+
+/* header section ends  */
