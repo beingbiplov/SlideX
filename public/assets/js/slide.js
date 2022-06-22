@@ -7,16 +7,19 @@ class slide{
         this.previewWindow = previewWindow
         this.slides = []
         this.activeSlide
+        this.newSLideClone
+        this.previewSectionWin
     }
 
     newSlide(){
-        let newSlide = document.createElement('div')
-        newSlide.classList.add('content_section__main--slide', 'active')
-        this.activeSlide = newSlide
-        this.slides.push(newSlide)
-        this.workspace.appendChild(newSlide)
+        this.newSlide = document.createElement('div')
+        this.newSlide.classList.add('content_section__main--slide', 'active')
+        this.activeSlide = this.newSlide
+        this.slides.push(this.newSlide)
+        this.workspace.appendChild(this.newSlide)
 
-        this.addSlideTOPreview(newSlide)
+        this.addSlideTOPreview(this.newSlide)
+        defaultLayout(this.newSlide)
         
     }
 
@@ -34,18 +37,31 @@ class slide{
         previewBox.classList.add('preview_section__box')
         newPreview.append(previewBox)
 
-        const previewSectionWin = document.createElement('div')
-        previewSectionWin.classList.add('preview_section__window')
-        previewBox.appendChild(previewSectionWin)
+        this.previewSectionWin = document.createElement('div')
+        this.previewSectionWin.classList.add('preview_section__window')
+        previewBox.appendChild(this.previewSectionWin)
 
-        previewSectionWin.innerHTML = ''
-        let newSLideClone = newSlide.cloneNode(true)
-        newSLideClone.classList.add('preview_section__window--slide')
-        previewSectionWin.appendChild(newSLideClone)
+        this.previewSectionWin.innerHTML = ''
+        this.newSLideClone = newSlide.cloneNode(true)
+        this.newSLideClone.classList.add('preview_section__window--slide')
+        this.previewSectionWin.appendChild(this.newSLideClone)
+    }
 
+    updatePreviewWindow(slide) {
+        this.previewSectionWin.innerHTML = ''
+        this.newSLideClone = slide.cloneNode(true)
+        this.newSLideClone.classList.add('preview_section__window--slide')
+        this.previewSectionWin.appendChild(this.newSLideClone)
 
     }
+
+    selectLayout(layout) {
+        this.newSlide.innerHTML = ''
+        layout(this.activeSlide)
+        this.updatePreviewWindow(this.activeSlide)
+    }
 }
+
 
 const slide1 = new slide(workspace, previewWindow)
 

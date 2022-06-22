@@ -24,3 +24,28 @@ a {
 h1, h2, h3, h4, h5, h6{
     display: inline-block;
 }
+
+textarea{
+    background-color: transparent;
+}
+
+.textareaHeading {
+    font-size: 3em;
+    box-sizing: border-box;
+    /* border: 2px solid #ccc; */
+    border-radius: 3px;
+    font-weight: 600;
+    font-weight: bolder;
+}
+
+.textareaBody{
+    font-size: 2em;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: 400;
+}
+
+textarea::placeholder {
+    color: black;
+    font-size: 0.8em;
+}
