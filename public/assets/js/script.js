@@ -35,3 +35,10 @@ navDownBtn.addEventListener('click', () =>{
 
 // call function on window load 
 window.onload = setContentSectionHeight()
+
+
+// resize textarea
+let resizeTextarea = (element) => {
+    element.style.height = "100%";
+    element.style.height = (element.scrollHeight)+"px";
+}

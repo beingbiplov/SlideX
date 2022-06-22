@@ -27,6 +27,9 @@ h1, h2, h3, h4, h5, h6{
 
 textarea{
     background-color: transparent;
+    border: none;
+    resize: none;
+    overflow: hidden;
 }
 
 .textareaHeading {
@@ -48,4 +51,9 @@ textarea{
 textarea::placeholder {
     color: black;
     font-size: 0.8em;
+    padding: 12px 16px;
+}
+
+textarea:focus {
+    resize: both;
 }

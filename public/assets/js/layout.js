@@ -20,6 +20,7 @@ let defaultLayout = (slide) => {
     headingTextArea.style.width = toPer(100)
     headingTextArea.classList.add('textareaHeading')
     headingTextArea.setAttribute('placeholder', 'Click to add Title')
+    headingTextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     headingDiv.appendChild(headingTextArea)
 
@@ -38,6 +39,7 @@ let defaultLayout = (slide) => {
     bodyTextArea.style.width = toPer(100)
     bodyTextArea.classList.add('textareaBody')
     bodyTextArea.setAttribute('placeholder', 'Click to add Sub title')
+    bodyTextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     bodyDiv.appendChild(bodyTextArea)
 }
@@ -61,6 +63,7 @@ let titleOnlyLayout = (slide) => {
     headingTextArea.style.width = toPer(100)
     headingTextArea.classList.add('textareaHeading')
     headingTextArea.setAttribute('placeholder', 'Click to add Title')
+    headingTextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     headingDiv.appendChild(headingTextArea)
 }
@@ -86,6 +89,7 @@ let titleBodyLayout = (slide) => {
     headingTextArea.style.width = toPer(100)
     headingTextArea.classList.add('textareaHeading')
     headingTextArea.setAttribute('placeholder', 'Click to add Title')
+    headingTextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     headingDiv.appendChild(headingTextArea)
 
@@ -104,6 +108,7 @@ let titleBodyLayout = (slide) => {
     bodyTextArea.style.width = toPer(100)
     bodyTextArea.classList.add('textareaBody')
     bodyTextArea.setAttribute('placeholder', 'Click to add Sub title')
+    bodyTextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     bodyDiv.appendChild(bodyTextArea)
 }
@@ -129,6 +134,7 @@ let titleAndTwoCols = (slide) => {
     headingTextArea.style.width = toPer(100)
     headingTextArea.classList.add('textareaHeading')
     headingTextArea.setAttribute('placeholder', 'Click to add Title')
+    headingTextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     headingDiv.appendChild(headingTextArea)
 
@@ -147,6 +153,7 @@ let titleAndTwoCols = (slide) => {
     body1TextArea.style.width = toPer(100)
     body1TextArea.classList.add('textareaBody')
     body1TextArea.setAttribute('placeholder', 'Click to add text')
+    body1TextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     bodyDiv1.appendChild(body1TextArea)
 
@@ -165,6 +172,7 @@ let titleAndTwoCols = (slide) => {
     body2TextArea.style.width = toPer(100)
     body2TextArea.classList.add('textareaBody')
     body2TextArea.setAttribute('placeholder', 'Click to add text')
+    body2TextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     bodyDiv2.appendChild(body2TextArea)
 }
@@ -191,6 +199,7 @@ let oneColumnLayout = (slide) => {
     headingTextArea.style.width = toPer(100)
     headingTextArea.classList.add('textareaHeading')
     headingTextArea.setAttribute('placeholder', 'Click to add Title')
+    headingTextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     headingDiv.appendChild(headingTextArea)
 
@@ -209,7 +218,8 @@ let oneColumnLayout = (slide) => {
     body1TextArea.style.width = toPer(100)
     body1TextArea.classList.add('textareaBody')
     body1TextArea.setAttribute('placeholder', 'Click to add text')
-
+    body1TextArea.setAttribute('oninput', 'resizeTextarea(this)')
+    
     bodyDiv1.appendChild(body1TextArea)
 
 }
@@ -233,6 +243,7 @@ let mainPointLayout = (slide) => {
     headingTextArea.style.width = toPer(100)
     headingTextArea.classList.add('textareaHeading')
     headingTextArea.setAttribute('placeholder', 'Click to add Title')
+    headingTextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     headingDiv.appendChild(headingTextArea)
 }
@@ -261,6 +272,7 @@ let twoSectionLayout = (slide) => {
     headingTextArea.style.width = toPer(100)
     headingTextArea.classList.add('textareaHeading')
     headingTextArea.setAttribute('placeholder', 'Click to add Title')
+    headingTextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     headingDiv.appendChild(headingTextArea)
 
@@ -279,6 +291,7 @@ let twoSectionLayout = (slide) => {
     body1TextArea.style.width = toPer(100)
     body1TextArea.classList.add('textareaBody')
     body1TextArea.setAttribute('placeholder', 'Click to add text')
+    body1TextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     bodyDiv1.appendChild(body1TextArea)
 
@@ -297,6 +310,7 @@ let twoSectionLayout = (slide) => {
     body2TextArea.style.width = toPer(100)
     body2TextArea.classList.add('textareaBody')
     body2TextArea.setAttribute('placeholder', 'Click to add text')
+    body2TextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     bodyDiv2.appendChild(body2TextArea)
 
@@ -323,6 +337,8 @@ let captionLayout = (slide) =>{
     bodyTextArea.style.width = toPer(100)
     bodyTextArea.classList.add('textareaBody')
     bodyTextArea.setAttribute('placeholder', 'Click to add text')
+    bodyTextArea.setAttribute('oninput', 'resizeTextarea(this)')
+
 
     bodyDiv.appendChild(bodyTextArea)
 }
