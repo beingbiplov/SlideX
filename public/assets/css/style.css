@@ -178,6 +178,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .content_section__main--placeholder a{
@@ -259,3 +260,31 @@
     min-width: 80%;
 }
 /* left side panel ends  */
+
+
+/* context menu  */
+
+.slide_context_menu{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 10px;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 1;
+}
+
+.slide_context_menu__item {
+    cursor: pointer;
+    padding: 8px 15px;
+}
+
+.slide_context_menu__item:hover {
+    background-color: #f8f8f8f8;
+}
+
+
+/* context menu ends  */
