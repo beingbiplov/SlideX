@@ -188,42 +188,24 @@
 
             <!-- left side panel for slide preview  -->
             <div class="content_section__left">
-                <div class="content_section__left__preview_section">
-                    <div class="slide_preview">
-                        <div class="preview_section__sn">
-                            1
-                        </div>
-                        <div class="preview_section__box active">
-                            <div class="preview_section__window">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide_preview">
-                        <div class="preview_section__sn">
-                            2
-                        </div>
-                        <div class="preview_section__box">
-                            <div class="preview_section__window">
-                            </div>
-                        </div>
-                    </div>
+                <div id="preview_window" class="content_section__left__preview_section">
+                
                 </div>
 
             </div>
 
             <!-- main slide section  -->
             <div class="content_section__main">
-                <div class="workspace">
+                <div id="workspace" class="workspace">
                     <div class="content_section__main--placeholder">
-                        <a href="#">
+                        <a id="new_slide--btn" href="#">
                             Click to add new slide
                         </a>
                     </div>
 
-                    <div class="content_section__main--slide">
+                    <!-- <div class="content_section__main--slide">
 
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -238,7 +220,8 @@
 
     </section>
     
-
+    <script src="./assets/js/utils.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/slide.js"></script>
 </body>
 </html>
