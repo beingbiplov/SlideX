@@ -81,18 +81,3 @@ contextMenuDel = document.getElementById('slide_context_menu--del')
 contextMenuDel.addEventListener('click', () =>{
     slide1.removeSlide()
 })
-
-
-// handle new slide btn from placeholder slide 
-const newSlideBtn = document.getElementById('new_slide--btn')
-newSlideBtn.addEventListener('click', ()=>{   
-    slide1.newSlide()
-})
-
-
-// handle add new slide btn 
-const addNewSlideBtn = document.getElementById('add_new_slide_bottom_nav_btn')
-
-addNewSlideBtn.addEventListener('click', () =>{
-    slide1.newSlide()
-})

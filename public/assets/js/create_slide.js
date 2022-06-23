@@ -45,7 +45,6 @@ class CreateSlide{
     }
 
     removePreview() {
-        console.log("REMO", this.newPreview)
         this.newPreview.remove()        
     }
 
@@ -58,7 +57,7 @@ class CreateSlide{
     }
 
     selectLayout(layout) {
-        this.newSlideDiv.innerHTML = ''
+        // this.newSlideDiv.innerHTML = ''
         layout(this.newSlideDiv)
         this.updatePreviewWindow(this.newSlideDiv)
     }
@@ -75,11 +74,15 @@ class CreateSlide{
 
         this.newSlideDiv.classList.add(themeClass)
         this.updatePreviewWindow(this.newSlideDiv)
-
     }
 
     removeDiv(){
         this.newSlideDiv.remove()
+    }
+
+    addTextBoxToSlide(){
+        createTextBox(this.newSlideDiv)
+        this.updatePreviewWindow(this.newSlideDiv)
     }
 
 }

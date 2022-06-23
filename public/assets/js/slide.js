@@ -80,7 +80,10 @@ class slide{
             this.newSlide()
         }
         this.activeSlideCls.changeSlideTheme(themeIdx)
+    }
 
+    addTextBox(){
+        this.activeSlideCls.addTextBoxToSlide()
     }
 }
 

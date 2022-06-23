@@ -36,3 +36,21 @@ let handleSelectTheme = (event) => {
 for (btn of selThemeBth) {
     btn.addEventListener('click', handleSelectTheme)
 }
+
+// handle new slide btn from placeholder slide 
+newSlideBtn.addEventListener('click', ()=>{   
+    slide1.newSlide()
+})
+
+
+// handle add new slide btn 
+addNewSlideBtn.addEventListener('click', () =>{
+    slide1.newSlide()
+})
+
+// handle add textbox event 
+addTextBoxBtn.addEventListener('click', ()=>{
+    if (slide1.activeSlideCls){
+        slide1.addTextBox()
+    }
+})
