@@ -258,6 +258,16 @@
     max-width: 100%;
     min-height: 85px;
     min-width: 80%;
+    pointer-events: none;
+}
+
+.preview_section__window--slide > *{
+    -moz-transform: scale(0.25);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.25);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.25);
+    -webkit-transform-origin: 0 0;
 }
 /* left side panel ends  */
 

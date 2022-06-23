@@ -72,7 +72,7 @@ workspace.addEventListener('contextmenu', (e) => {
     cmenu.style.left = toPx(leftValue)
 })
 
-workspace.addEventListener('click', () =>{
+window.addEventListener('click', () =>{
     showContextMenu(false)
 })
 
