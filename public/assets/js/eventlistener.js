@@ -1,6 +1,4 @@
-// event listener to choose layout btns
-
-const selLayoutBtn = document.getElementsByClassName('sel_layout--btn')
+// event listener to choose layout
 
 let handleSelectLayout = (event) => {
     let btn = event.target.innerText
@@ -25,4 +23,16 @@ let mapLayout = (n) => {
     }
 
     return layouts[n]
+}
+
+
+// event listener to select theme
+
+let handleSelectTheme = (event) => {
+    let themeIdx = event.target.getAttribute("value")
+    slide1.selectTheme(themeIdx)
+}
+
+for (btn of selThemeBth) {
+    btn.addEventListener('click', handleSelectTheme)
 }

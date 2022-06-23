@@ -1,6 +1,3 @@
-const workspace = document.getElementById('workspace')
-const previewWindow = document.getElementById('preview_window')
-const slidePlaceholder = document.getElementsByClassName('content_section__main--placeholder')[0]
 
 class slide{
     constructor(workspace, previewWindow){
@@ -76,6 +73,14 @@ class slide{
         if (this.slideCls.length <= 0){
             slidePlaceholder.style.display = 'flex'
         }
+    }
+
+    selectTheme(themeIdx){
+        if(!this.activeSlideCls){
+            this.newSlide()
+        }
+        this.activeSlideCls.changeSlideTheme(themeIdx)
+
     }
 }
 

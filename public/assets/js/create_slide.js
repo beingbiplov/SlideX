@@ -63,6 +63,21 @@ class CreateSlide{
         this.updatePreviewWindow(this.newSlideDiv)
     }
 
+    changeSlideTheme(themeIdx){
+        let themeClass = themeList[themeIdx]
+
+        for (let theme of themeList){
+            if (this.newSlideDiv.classList.contains(theme)){
+                this.newSlideDiv.classList.remove(theme)
+            }
+
+        }
+
+        this.newSlideDiv.classList.add(themeClass)
+        this.updatePreviewWindow(this.newSlideDiv)
+
+    }
+
     removeDiv(){
         this.newSlideDiv.remove()
     }

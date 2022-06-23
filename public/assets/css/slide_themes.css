@@ -1,0 +1,46 @@
+
+.simple_dark{
+    background-color: #1b212c;
+}
+
+.simple_dark>div> textarea::placeholder {
+    color: white;
+}
+
+.simple_dark > div > .textareaHeading::placeholder{
+    font-family: 'Euphoria Script', cursive;
+}
+
+.simple_dark > div > textarea {
+    color: white;
+}
+
+.simple_dark > div > .textareaHeading {
+    font-family: 'Euphoria Script', cursive;
+}
+
+.vertical_red_teal {
+    background: linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%);
+}
+
+.streamline {
+    background: linear-gradient(0deg, #e9edee 90%, #ffffff 10%);
+    /* background-image: url('../images/twocolorline.png'); */
+}
+
+.beach_day {
+    background: linear-gradient(0deg, #00fdc8 25%, #ffffff 25%);
+}
+
+.blue_horizon {
+    background: linear-gradient(0deg, #87CEEB 20%, #ffffff 80%);
+}
+
+
+.blue_horizon > div > .textareaHeading::placeholder {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.blue_horizon > div > .textareaHeading {
+    font-family: 'Permanent Marker', cursive;
+}
