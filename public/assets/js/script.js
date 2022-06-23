@@ -49,7 +49,7 @@ let resizeTextarea = (element) => {
 const cmenu = document.querySelector('.slide_context_menu')
 
 function showContextMenu(show = true){
-    if (slide1.slides.length >= 1){
+    if (slide1.slideCls.length >= 1){
         cmenu.style.display = show ? 'block' : 'none'
     }else{
         cmenu.style.display = 'none'
@@ -80,4 +80,19 @@ contextMenuDel = document.getElementById('slide_context_menu--del')
 
 contextMenuDel.addEventListener('click', () =>{
     slide1.removeSlide()
+})
+
+
+// handle new slide btn from placeholder slide 
+const newSlideBtn = document.getElementById('new_slide--btn')
+newSlideBtn.addEventListener('click', ()=>{   
+    slide1.newSlide()
+})
+
+
+// handle add new slide btn 
+const addNewSlideBtn = document.getElementById('add_new_slide_bottom_nav_btn')
+
+addNewSlideBtn.addEventListener('click', () =>{
+    slide1.newSlide()
 })

@@ -80,6 +80,7 @@ body {
 
 .content_section__left__preview_section{
     padding: 12px 20px;
+    cursor: pointer;
     /* display: flex; */
 }
 

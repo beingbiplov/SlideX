@@ -1,92 +1,79 @@
 const workspace = document.getElementById('workspace')
 const previewWindow = document.getElementById('preview_window')
+const slidePlaceholder = document.getElementsByClassName('content_section__main--placeholder')[0]
 
 class slide{
     constructor(workspace, previewWindow){
         this.workspace = workspace
         this.previewWindow = previewWindow
-        this.slides = []
-        this.activeSlide
         this.newSLideClone
         this.previewSectionWin
         this.newSlideDiv
         this.newPreview
+        this.slideCls = []
+        this.activeSlideCls
     }
 
     newSlide(){
-        this.newSlideDiv = document.createElement('div')
-        this.newSlideDiv.classList.add('content_section__main--slide', 'active')
-        this.activeSlide = this.newSlideDiv
-        this.slides.push(this.newSlideDiv)
-        this.workspace.appendChild(this.newSlideDiv)
+        slidePlaceholder.style.display = 'none'
 
-        this.addSlideTOPreview(this.newSlideDiv)
-        defaultLayout(this.newSlideDiv)
-        this.updatePreviewWindow(this.newSlideDiv)
+        let newSlidecls = new CreateSlide(this.workspace, this.slideCls, this.previewWindow)
+        this.newSlideDiv = newSlidecls.create()
+        this.slideCls.push(newSlidecls)
+        this.updatePreviewWindow = newSlidecls.updatePreviewWindow
+        this.changeActiveSlide(newSlidecls)
+
+        newSlidecls.newPreview.addEventListener('click', function (){
+            this.changeActiveSlide(newSlidecls)
+        }.bind(this))
         
     }
 
-    addSlideTOPreview(newSlideDiv){
-        this.newPreview = document.createElement('div')
-        this.newPreview.classList.add('slide_preview')
-        this.previewWindow.appendChild(this.newPreview)
-
-        const previewSN = document.createElement('div')
-        previewSN.classList.add('preview_section__sn')
-        previewSN.innerHTML = `${this.slides.length}`
-        this.newPreview.appendChild(previewSN)
-
-        const previewBox = document.createElement('div')
-        previewBox.classList.add('preview_section__box')
-        this.newPreview.append(previewBox)
-
-        this.previewSectionWin = document.createElement('div')
-        this.previewSectionWin.classList.add('preview_section__window')
-        previewBox.appendChild(this.previewSectionWin)
-
-        this.previewSectionWin.innerHTML = ''
-        this.newSLideClone = newSlideDiv.cloneNode(true)
-        this.newSLideClone.classList.add('preview_section__window--slide')
-        this.previewSectionWin.appendChild(this.newSLideClone)
-    }
-
-    updatePreviewWindow(slide) {
-        this.previewSectionWin.innerHTML = ''
-        this.newSLideClone = slide.cloneNode(true)
-        this.newSLideClone.classList.add('preview_section__window--slide')
-        this.previewSectionWin.appendChild(this.newSLideClone)
-
+    changeActiveSlide(slideCls){
+        if (!this.activeSlideCls){
+            this.activeSlideCls = slideCls
+            this.activeSlideCls.newSlideDiv.style.display = 'block'
+        }
+        else{
+            this.activeSlideCls.newSlideDiv.style.display = 'none'
+            this.activeSlideCls = slideCls
+            this.activeSlideCls.newSlideDiv.style.display = 'block'
+        }
     }
 
     removePreviewWindow(){
-        this.newPreview.remove()
+        this.activeSlideCls.removePreview()
+        
     }
 
     selectLayout(layout) {
-        this.newSlideDiv.innerHTML = ''
-        layout(this.activeSlide)
-        this.updatePreviewWindow(this.activeSlide)
+        if(!this.activeSlideCls){
+            this.newSlide()
+        }
+        this.activeSlideCls.selectLayout(layout)
     }
 
     removeSlide(){
-        this.activeSlide.remove()
-        this.removePreviewWindow()
+        this.activeSlideCls.removeDiv()
+        this.removePreviewWindow() 
+        
         // remove form slides list 
-        const index = this.slides.indexOf(this.activeSlide);
-        if (index > -1) {
-            this.slides.splice(index, 1); 
+        const index = this.slideCls.indexOf(this.activeSlideCls);
+        
+        if (index >= this.slideCls.length - 1 && this.slideCls.length > 1){
+            this.changeActiveSlide(this.slideCls[index-1])
         }
-        if (index >= this.slides.length - 1){
-            this.activeSlide = this.slides[index-1]
-        }
-        else if (index <= 0){
-            this.activeSlide = null
+        else if (index <= 0 && this.slideCls.length <= 1){
+            this.activeSlideCls = null
         }
         else{
-            this.activeSlide = this.slides[index + 1]
+            this.changeActiveSlide(this.slideCls[index + 1])
         }
-        console.log(this.slides)
-        if (this.slides.length <= 0){
+        if (index > -1) {
+            this.slideCls.splice(index, 1); 
+        }
+        
+        if (this.slideCls.length <= 0){
             slidePlaceholder.style.display = 'flex'
         }
     }
@@ -94,12 +81,3 @@ class slide{
 
 
 const slide1 = new slide(workspace, previewWindow)
-let slidePlaceholder = document.getElementsByClassName('content_section__main--placeholder')[0]
-
-const newSlideBtn = document.getElementById('new_slide--btn')
-newSlideBtn.addEventListener('click', ()=>{
-    
-    slide1.newSlide()
-    slidePlaceholder.style.display = 'none'
-    
-})
