@@ -15,3 +15,5 @@ const addTextBoxBtn = document.getElementById('add_textbox')
 const slide_textbox = document.getElementsByClassName('slide_textbox')
 
 const textbox_contextmenu = document.querySelector('.textbox_context_menu')
+
+const rigthPanelDiv = document.getElementById('right_panel')

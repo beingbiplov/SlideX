@@ -90,3 +90,32 @@ body {
 }
 
 /* left side panel ends  */
+
+
+/* right panel starts  */
+
+.themeBox{
+    width: 100%;
+    height: 85px;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-bottom: 1.5em;
+}
+
+.theme_preview_window{
+    width: 80%;
+    height: 100%;
+    margin: 0 10%;
+    box-sizing: border-box;
+    border: 1px #949494 solid;
+    border-radius: 4px;
+}
+
+.theme_sec_heading{
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+}
+
+/* right panle ends  */
