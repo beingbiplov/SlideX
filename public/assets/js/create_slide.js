@@ -7,6 +7,7 @@ class CreateSlide{
         this.newPreview
         this.previewWindow = previewWindow
         this.previewSectionWin
+        this.textBoxList = []
     }
 
     create(){
@@ -81,7 +82,8 @@ class CreateSlide{
     }
 
     addTextBoxToSlide(){
-        createTextBox(this.newSlideDiv)
+        let textboxCls = new textBox(this.newSlideDiv)
+        let textboxDiv = textboxCls.create()
         this.updatePreviewWindow(this.newSlideDiv)
     }
 

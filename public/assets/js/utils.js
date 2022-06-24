@@ -40,6 +40,7 @@ let createTextBox = (slide) =>{
     bodyDiv.style.height = toPer(bHeight)
     bodyDiv.style.width = toPer(bWidth)
     bodyDiv.style.position = 'absolute'
+    bodyDiv.classList.add('slide_textbox')
 
     bodyDiv.style.top = toPer(getRandomInt(18,70))
     bodyDiv.style.left = toPer(10)
@@ -54,4 +55,6 @@ let createTextBox = (slide) =>{
     bodyTextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     bodyDiv.appendChild(bodyTextArea)
+
+    return [bodyDiv, bodyTextArea]
 }

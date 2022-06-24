@@ -72,12 +72,13 @@ workspace.addEventListener('contextmenu', (e) => {
     cmenu.style.left = toPx(leftValue)
 })
 
-window.addEventListener('click', () =>{
-    showContextMenu(false)
-})
 
 contextMenuDel = document.getElementById('slide_context_menu--del')
 
 contextMenuDel.addEventListener('click', () =>{
     slide1.removeSlide()
+})
+
+window.addEventListener('click', () =>{
+    showContextMenu(false)
 })

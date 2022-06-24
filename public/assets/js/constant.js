@@ -11,3 +11,7 @@ const selThemeBth = document.getElementsByClassName('sel_theme--btn')
 const themeList = ['simple_dark', 'vertical_red_teal', 'streamline', 'beach_day', 'blue_horizon']
 
 const addTextBoxBtn = document.getElementById('add_textbox')
+
+const slide_textbox = document.getElementsByClassName('slide_textbox')
+
+const textbox_contextmenu = document.querySelector('.textbox_context_menu')
