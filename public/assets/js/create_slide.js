@@ -8,6 +8,9 @@ class CreateSlide{
         this.previewWindow = previewWindow
         this.previewSectionWin
         this.textBoxList = []
+        this.heading1
+        this.body1
+        this.body2
     }
 
     create(){
@@ -15,7 +18,13 @@ class CreateSlide{
         this.newSlideDiv.classList.add('content_section__main--slide', 'active')
         this.workspace.appendChild(this.newSlideDiv)
 
-        defaultLayout(this.newSlideDiv)
+        let createdLayouts = createLayoutStructure(this.newSlideDiv)
+        this.heading1 = createdLayouts[0]
+        this.body1 = createdLayouts[1]
+        this.body2 = createdLayouts[2]
+
+        defaultLayout(this.heading1, this.body1, this.body2)
+        
         this.addSlideTOPreview(this.newSlideDiv)
         return this.newSlideDiv
     }
@@ -59,7 +68,7 @@ class CreateSlide{
 
     selectLayout(layout) {
         // this.newSlideDiv.innerHTML = ''
-        layout(this.newSlideDiv)
+        layout(this.heading1, this.body1, this.body2)
         this.updatePreviewWindow(this.newSlideDiv)
     }
 
