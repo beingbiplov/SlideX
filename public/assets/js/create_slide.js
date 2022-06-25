@@ -23,7 +23,9 @@ class CreateSlide{
         this.body1 = createdLayouts[1]
         this.body2 = createdLayouts[2]
 
-        defaultLayout(this.heading1, this.body1, this.body2)
+        this.handleDragDrop(this.heading1, this.body1, this.body2)
+
+        defaultLayout(this.newSlideDiv, this.heading1, this.body1, this.body2)
         
         this.addSlideTOPreview(this.newSlideDiv)
         return this.newSlideDiv
@@ -68,7 +70,7 @@ class CreateSlide{
 
     selectLayout(layout) {
         // this.newSlideDiv.innerHTML = ''
-        layout(this.heading1, this.body1, this.body2)
+        layout(this.newSlideDiv, this.heading1, this.body1, this.body2)
         this.updatePreviewWindow(this.newSlideDiv)
     }
 
@@ -96,4 +98,9 @@ class CreateSlide{
         this.updatePreviewWindow(this.newSlideDiv)
     }
 
+    handleDragDrop(heading1, body1, body2){
+        handleDrag(this.newSlideDiv, heading1)
+        handleDrag(this.newSlideDiv, body1)
+        handleDrag(this.newSlideDiv, body2)
+    }
 }

@@ -55,4 +55,6 @@ textarea::placeholder {
 
 textarea:focus {
     resize: both;
+    outline: none;
+    border: 1px solid #949494;
 }

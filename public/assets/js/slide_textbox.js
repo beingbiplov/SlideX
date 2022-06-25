@@ -18,6 +18,11 @@ class textBox{
                 }
             }
         }.bind(this));
+        this.handleTextAreaDrag()
         return this.textboxDiv
+    }
+
+    handleTextAreaDrag(){
+        handleDrag(this.slide, this.textboxDiv)
     }
 }
