@@ -10,6 +10,7 @@ class rightPanel{
 
         this.createThemePanel()
         this.createLinkPanel()
+        this.createLayoutPanel()
         this.selectActiveRightPanel('themes')
     }
 
@@ -93,6 +94,37 @@ class rightPanel{
             slide1.addLink(linkTextVal, linkUrlVal) 
         }.bind(this))
         this.rightPanelList['link'] = this.linkPanel
+    }
+
+    createLayoutPanel() {
+        this.layoutPanel = document.createElement('div')
+        this.layoutPanel.style.width = '100%'
+        this.rightPanelDiv.appendChild(this.layoutPanel)
+
+        let layoutHeading = document.createElement('div')
+        layoutHeading.classList.add('theme_sec_heading')
+        layoutHeading.innerText = 'Layouts'
+        this.layoutPanel.appendChild(layoutHeading)
+
+        for (let layout in layoutSS){
+            let layoutDiv = document.createElement('div')
+            layoutDiv.classList.add('layout_box')
+            this.layoutPanel.appendChild(layoutDiv)
+
+            let layoutPreviewWindow = document.createElement('div')
+            layoutPreviewWindow.classList.add('layout_preview_window')
+            layoutDiv.appendChild(layoutPreviewWindow)
+
+            layoutPreviewWindow.style.backgroundImage = `url(./assets/images/layouts/${layout})`
+            layoutPreviewWindow.style.backgroundRepeat = 'no-repeat'
+            layoutPreviewWindow.style.backgroundSize = 'contain'
+
+            layoutDiv.addEventListener('click', function(){
+                slide1.selectLayout(layoutSS[layout])
+            }.bind(this))
+        }
+
+        this.rightPanelList['layout'] = this.layoutPanel
     }
 }
 

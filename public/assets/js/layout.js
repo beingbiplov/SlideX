@@ -230,3 +230,14 @@ let captionLayout = (slide, headingDiv, bodyDiv, bodyDiv2) =>{
     bodyDiv.style.display = 'inline-block'
     bodyDiv2.style.display = 'none'
 }
+
+const layoutSS = {
+    'default.png' :defaultLayout, 
+    'title_only.png': titleOnlyLayout, 
+    'title_body.png': titleBodyLayout, 
+    'two_cols.png': titleAndTwoCols, 
+    'one_col.png': oneColumnLayout, 
+    'main_point.png': mainPointLayout, 
+    'two_section.png': twoSectionLayout, 
+    'caption.png': captionLayout
+}

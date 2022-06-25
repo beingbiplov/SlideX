@@ -68,3 +68,10 @@ bottomNavThemeSelBtn.addEventListener('click', ()=>{
         newRightPanel.selectActiveRightPanel('themes')
     }
 })
+
+// layout selector panel toggle event listener
+bottomNavLayoutSelBtn.addEventListener('click', ()=>{
+    if (newRightPanel){
+        newRightPanel.selectActiveRightPanel('layout')
+    }
+})
