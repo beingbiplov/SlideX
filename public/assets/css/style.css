@@ -235,6 +235,7 @@
     border-radius: 4px;
     border: 1px solid #949494;
     position: relative;
+    overflow: hidden;
 }
 
 /* main content sectin ends  */
@@ -324,12 +325,20 @@
 .slide_img_div{
     border: none;
     overflow: hidden;
+    display: inline-block;
+    cursor: default;
 }
 
 .slide_img_div:hover{
     z-index: 2;
+    resize: both;
+    border: dashed 1px #9aa0a6;
 }
 
-
-
 /* slide image ends  */
+
+/* slide link  */
+.linkDiv:hover{
+    border: dashed 1px #9aa0a6;
+}
+/* slide link ends  */

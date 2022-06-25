@@ -8,7 +8,7 @@ function handleDrag(dragContainer, dragElement){
         let newLeftVal = leftVal + movementX
         let newTopVal = topVal + movementY
         
-        if(newLeftVal > 0 && (newLeftVal+dragElement.offsetWidth) < dragContainer.offsetWidth && newTopVal > 0 && newTopVal < dragContainer.offsetHeight - dragElement.offsetHeight){
+        if(newLeftVal > -dragElement.offsetWidth && (newLeftVal) < dragContainer.offsetWidth && newTopVal > -(dragElement.offsetHeight) && newTopVal < dragContainer.offsetHeight){
             dragElement.style.left = toPx(newLeftVal)
             dragElement.style.top = toPx(newTopVal)
         }

@@ -11,6 +11,9 @@ class CreateSlide{
         this.heading1
         this.body1
         this.body2
+        this.closeBtnHeading
+        this.closeBtnBody1
+        this.closeBtnBody2
     }
 
     create(){
@@ -22,8 +25,14 @@ class CreateSlide{
         this.heading1 = createdLayouts[0]
         this.body1 = createdLayouts[1]
         this.body2 = createdLayouts[2]
+        this.closeBtnHeading = createdLayouts[3]
+        this.closeBtnBody1 = createdLayouts[4]
+        this.closeBtnBody2 = createdLayouts[5]
 
         this.handleDragDrop(this.heading1, this.body1, this.body2)
+        handlecloseBtnDisplay(this.heading1, this.closeBtnHeading)
+        handlecloseBtnDisplay(this.body1, this.closeBtnBody1)
+        handlecloseBtnDisplay(this.body2, this.closeBtnBody2)
 
         defaultLayout(this.newSlideDiv, this.heading1, this.body1, this.body2)
         

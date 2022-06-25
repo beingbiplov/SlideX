@@ -58,3 +58,13 @@ textarea:focus {
     outline: none;
     border: 1px solid #949494;
 }
+
+::-webkit-resizer {
+    border: 2px solid black;
+    background: #949494;
+    outline: none;
+}
+
+.element_close_btn{
+    display: none;
+}

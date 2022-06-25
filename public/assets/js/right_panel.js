@@ -15,7 +15,6 @@ class rightPanel{
     }
 
     selectActiveRightPanel(activePanel){
-        console.log(activePanel)
         for(let panel in this.rightPanelList){
             if (panel == activePanel){
                 this.rightPanelList[panel].style.display = 'block'
@@ -91,7 +90,9 @@ class rightPanel{
             let linkUrlVal = linkUrl.value
             linkText.value = ''
             linkUrl.value = ''
-            slide1.addLink(linkTextVal, linkUrlVal) 
+            if (slide1.activeSlideCls){
+                slide1.addLink(linkTextVal, linkUrlVal)
+            } 
         }.bind(this))
         this.rightPanelList['link'] = this.linkPanel
     }

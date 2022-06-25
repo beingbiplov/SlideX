@@ -5,19 +5,15 @@ class textBox{
         this.textboxDiv
         this.contextMenu
         this.contextMenuItem
-        this.bodyTextArea
+        this.bodyTextArea,
+        this.bodyCloseBtn
     }
 
     create(){
-        [this.textboxDiv, this.bodyTextArea] = createTextBox(this.slide)
+        [this.textboxDiv, this.bodyTextArea, this.bodyCloseBtn] = createTextBox(this.slide)
         
-        this.textboxDiv.addEventListener('keydown', function(event) {
-            if (event.key == 'Delete') {
-                if (this.bodyTextArea == document.activeElement){
-                    this.textboxDiv.remove()
-                }
-            }
-        }.bind(this));
+        handlecloseBtnDisplay(this.textboxDiv, this.bodyCloseBtn)
+
         this.handleTextAreaDrag()
         return this.textboxDiv
     }

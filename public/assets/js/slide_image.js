@@ -4,33 +4,19 @@ class slideImage{
         this.slide = slide
         this.imageDiv
         this.imgUrl = imgUrl
-        this.focusedImg
+        this.imageDivImg
+        this.imgCloseBtn
+        this.imageInnerDiv
         this.create()
     }
 
     create(){
-        this.imageDiv = createImageDiv(this.slide, this.imgUrl)
+        [this.imageDiv, this.imageDivImg, this.imageInnerDiv, this.imgCloseBtn] = createImageDiv(this.slide, this.imgUrl)
         
-        this.imgEventListeners()
+        handlecloseBtnDisplay(this.imageDiv, this.imgCloseBtn)
         
         this.handleImageDrag()
         return this.imageDiv
-    }
-
-    imgEventListeners(){
-        this.imageDiv.addEventListener('mouseover', function(){
-            this.focusedImg = this.imageDiv
-        }.bind(this))
-
-        this.imageDiv.addEventListener('mouseout', function(){
-            this.focusedImg = ''
-        }.bind(this))
-
-        workspace.addEventListener('keydown', function(event) {
-            if (event.key == 'Delete' && this.focusedImg == this.imageDiv) {
-                this.imageDiv.remove()
-            }
-        }.bind(this));
     }
 
     handleImageDrag(){

@@ -40,6 +40,8 @@ let createTextInput = (h, w, t, l) => {
 let createTextBox = (slide) =>{
     let bWidth = percentageOfNum(slide.offsetWidth, 80)
     let bHeight = percentageOfNum(slide.offsetHeight, 20)
+    const btnHeight = 15
+    const btnWidth = 15
 
     const bodyDiv = document.createElement('div')
     bodyDiv.style.position = 'absolute'
@@ -53,6 +55,24 @@ let createTextBox = (slide) =>{
 
     slide.appendChild(bodyDiv)
 
+    const bodyCloseBtnDiv = document.createElement('div')
+    bodyCloseBtnDiv.style.position = 'relative'
+    bodyCloseBtnDiv.style.width = toPer(100)
+    bodyCloseBtnDiv.style.height = toPx(btnHeight)
+    bodyDiv.appendChild(bodyCloseBtnDiv)
+
+    const bodyCloseBtn = document.createElement('img')
+    bodyCloseBtn.src = './assets/images/close.png'
+    bodyCloseBtn.style.cursor = 'pointer'
+    bodyCloseBtn.style.position = 'absoulte'
+    bodyCloseBtn.style.height = toPx(btnHeight)
+    bodyCloseBtn.style.width = toPx(btnWidth)
+    bodyCloseBtn.classList.add('element_close_btn')
+    bodyCloseBtn.style.right = '0'
+    bodyCloseBtn.style.top = '0'
+    bodyCloseBtn.style.zIndex = '2'
+    bodyCloseBtnDiv.appendChild(bodyCloseBtn)
+
     const bodyTextArea = document.createElement('textarea')
     bodyTextArea.style.height = toPx(bHeight)
     bodyTextArea.style.width = toPx(bWidth)
@@ -61,13 +81,16 @@ let createTextBox = (slide) =>{
     bodyTextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     bodyDiv.appendChild(bodyTextArea)
+    bodyTextArea.addEventListener('mousedown', (e)=>{e.stopPropagation()})
 
-    return [bodyDiv, bodyTextArea]
+    return [bodyDiv, bodyTextArea, bodyCloseBtn]
 }
 
 let createImageDiv = (slide, img_url) =>{
     let bWidth = percentageOfNum(slide.offsetWidth, 25)
     let bHeight = percentageOfNum(slide.offsetHeight, 40)
+    const btnHeight = 15
+    const btnWidth = 15
 
     const imageDiv = document.createElement('div')
     imageDiv.style.position = 'absolute'
@@ -75,26 +98,52 @@ let createImageDiv = (slide, img_url) =>{
     imageDiv.style.top = toPer(getRandomInt(1,5))
     imageDiv.style.left = toPer(getRandomInt(1,10))
 
-    imageDiv.style.height= toPx(bHeight)
+    imageDiv.style.height= toPx(bHeight+ 50)
     imageDiv.style.width = toPx(bWidth)
-    imageDiv.classList.add('slide_img_div')
-    imageDiv.style.resize =  'both'
+    imageDiv.style.display = 'inline_block'
+    // imageDiv.classList.add('slide_img_div')
 
     slide.appendChild(imageDiv)
+
+    const imgCloseBtnDiv = document.createElement('div')
+    imgCloseBtnDiv.style.position = 'relative'
+    imgCloseBtnDiv.style.width = toPer(100)
+    imgCloseBtnDiv.style.height = toPx(btnHeight)
+    imageDiv.appendChild(imgCloseBtnDiv)
+
+    const imgCloseBtn = document.createElement('img')
+    imgCloseBtn.src = './assets/images/close.png'
+    imgCloseBtn.style.cursor = 'pointer'
+    imgCloseBtn.style.position = 'absoulte'
+    imgCloseBtn.style.height = toPx(btnHeight)
+    imgCloseBtn.style.width = toPx(btnWidth)
+    imgCloseBtn.classList.add('element_close_btn')
+    imgCloseBtn.style.right = '0'
+    imgCloseBtn.style.top = '0'
+    imgCloseBtn.style.zIndex = '2'
+    imgCloseBtnDiv.appendChild(imgCloseBtn)
+
+    const imageInnerDiv = document.createElement('div')
+    imageInnerDiv.style.height= toPer(90)
+    imageDiv.appendChild(imageInnerDiv)
+    imageInnerDiv.classList.add('slide_img_div')
+    imageInnerDiv.addEventListener('mousedown', (e)=>{e.stopPropagation()})
 
     let imageDivImg = document.createElement('img')
     imageDivImg.style.height = toPer(100)
     imageDivImg.style.width = toPer(100)
     imageDivImg.src = img_url
-    imageDivImg.addEventListener('mousedown', (e)=>{e.preventDefault()})
 
-    imageDiv.appendChild(imageDivImg)
+    imageInnerDiv.appendChild(imageDivImg)
 
-    return imageDiv
+    return [imageDiv, imageDivImg, imageInnerDiv, imgCloseBtn]
 
 }
 
 let createlinkDiv = (slide, linkText, linkUrl) => {
+    const btnHeight = 15
+    const btnWidth = 15
+
     if (!linkText){
         linkText = linkUrl
     }
@@ -102,10 +151,28 @@ let createlinkDiv = (slide, linkText, linkUrl) => {
     const linkDiv  = document.createElement('div')
     linkDiv.classList.add('linkDiv')
     linkDiv.style.position = 'absolute'
-    linkDiv.style.padding = '2px'
+    linkDiv.style.padding = '10px'
     linkDiv.style.top = toPer(getRandomInt(1,5))
     linkDiv.style.left = toPer(getRandomInt(1,10))
     slide.appendChild(linkDiv)
+
+    const linkCloseBtnDiv = document.createElement('div')
+    linkCloseBtnDiv.style.position = 'relative'
+    linkCloseBtnDiv.style.width = toPer(100)
+    linkCloseBtnDiv.style.height = toPx(btnHeight)
+    linkDiv.appendChild(linkCloseBtnDiv)
+
+    const linkCloseBtn = document.createElement('img')
+    linkCloseBtn.src = './assets/images/close.png'
+    linkCloseBtn.style.cursor = 'pointer'
+    linkCloseBtn.style.position = 'absoulte'
+    linkCloseBtn.style.height = toPx(btnHeight)
+    linkCloseBtn.style.width = toPx(btnWidth)
+    linkCloseBtn.classList.add('element_close_btn')
+    linkCloseBtn.style.right = '0'
+    linkCloseBtn.style.top = '0'
+    linkCloseBtn.style.zIndex = '2'
+    linkCloseBtnDiv.appendChild(linkCloseBtn)
 
     const linkDivLink = document.createElement('a')
     linkDiv.classList.add('link_div_link')
@@ -116,5 +183,24 @@ let createlinkDiv = (slide, linkText, linkUrl) => {
 
     linkDiv.appendChild(linkDivLink)
 
-    return linkDiv
+    return [linkDiv, linkCloseBtn]
+}
+
+
+// handle close button events
+function handlecloseBtnDisplay(elementDiv, btn){
+    elementDiv.addEventListener('mouseover', ()=>{
+        btn.style.display = 'block'
+    })
+    elementDiv.addEventListener('mouseout', ()=>{
+        btn.style.display = 'none'
+    })
+
+    btn.addEventListener('click', function(){
+        this.closeBtnAction(elementDiv)
+    }.bind(this))
+}
+
+function closeBtnAction(elementDiv){
+    elementDiv.remove()
 }
