@@ -5,8 +5,24 @@ class rightPanel{
         this.themePanel
         this.windowHeight = 85
         this.windowWidth = 100
+        this.linkPanel
+        this.rightPanelList = {}
 
         this.createThemePanel()
+        this.createLinkPanel()
+        this.selectActiveRightPanel('themes')
+    }
+
+    selectActiveRightPanel(activePanel){
+        console.log(activePanel)
+        for(let panel in this.rightPanelList){
+            if (panel == activePanel){
+                this.rightPanelList[panel].style.display = 'block'
+            }
+            else{
+                this.rightPanelList[panel].style.display = 'none'
+            }
+        }
 
     }
 
@@ -34,8 +50,50 @@ class rightPanel{
                 slide1.selectTheme(themeList.indexOf(theme))
             }.bind(this))
         }
+
+        this.rightPanelList['themes'] = this.themePanel
     }
 
+    createLinkPanel(){
+        this.linkPanel = document.createElement('div')
+        this.linkPanel.style = '100%'
+        this.rightPanelDiv.appendChild(this.linkPanel)
+
+        let linkPanelHeading = document.createElement('div')
+        linkPanelHeading.classList.add('theme_sec_heading')
+        linkPanelHeading.innerText = 'Add Link'
+        this.linkPanel.appendChild(linkPanelHeading)
+
+        const inputDiv = document.createElement('div')
+        inputDiv.classList.add('linkpanel_inputdiv')
+        this.linkPanel.appendChild(inputDiv)
+
+        let linkText = document.createElement('input')
+        linkText.classList.add('linkpanel_input')
+        linkText.setAttribute('type', 'text')
+        linkText.placeholder = 'Link Text'
+        inputDiv.appendChild(linkText)
+
+        let linkUrl = document.createElement('input')
+        linkUrl.classList.add('linkpanel_input')
+        linkUrl.setAttribute('type', 'url')
+        linkUrl.placeholder = 'Link URL'
+        inputDiv.appendChild(linkUrl)
+
+        let linkPanelBtn = document.createElement('a')
+        linkPanelBtn.innerText = 'Add'
+        linkPanelBtn.classList.add('linkpanel_btn', 'btn')
+        this.linkPanel.appendChild(linkPanelBtn)
+
+        linkPanelBtn.addEventListener('click', function(){
+            let linkTextVal = linkText.value
+            let linkUrlVal = linkUrl.value
+            linkText.value = ''
+            linkUrl.value = ''
+            slide1.addLink(linkTextVal, linkUrlVal) 
+        }.bind(this))
+        this.rightPanelList['link'] = this.linkPanel
+    }
 }
 
 let newRightPanel = new rightPanel(rigthPanelDiv)

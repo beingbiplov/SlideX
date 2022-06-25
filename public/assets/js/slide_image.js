@@ -9,7 +9,6 @@ class slideImage{
     }
 
     create(){
-        console.log('ajhsd')
         this.imageDiv = createImageDiv(this.slide, this.imgUrl)
         
         this.imgEventListeners()

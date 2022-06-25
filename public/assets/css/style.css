@@ -177,6 +177,18 @@
     cursor: pointer;
 }
 
+#add_link_btn{
+    display: none;
+}
+
+#add_textbox_btn{
+    display: none;
+}
+
+#bottom_nav_theme_select_btn{
+    cursor: pointer;
+}
+
 /* header section ends  */
 
 /* main content section starts  */

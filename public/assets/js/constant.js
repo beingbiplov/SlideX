@@ -19,3 +19,6 @@ const textbox_contextmenu = document.querySelector('.textbox_context_menu')
 const rigthPanelDiv = document.getElementById('right_panel')
 
 const imageUploadNavBtn = document.getElementById('slide_img_upload_nav_btn')
+const addLinkDiv = document.getElementById('add_link_btn')
+const addTextBoxDiv = document.getElementById('add_textbox_btn')
+const bottomNavThemeSelBtn = document.getElementById('bottom_nav_theme_select_btn')

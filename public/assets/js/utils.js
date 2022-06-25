@@ -57,7 +57,7 @@ let createTextBox = (slide) =>{
     bodyTextArea.style.height = toPx(bHeight)
     bodyTextArea.style.width = toPx(bWidth)
     bodyTextArea.classList.add('textareaBody')
-    bodyTextArea.setAttribute('placeholder', 'Click to add Sub title')
+    bodyTextArea.setAttribute('placeholder', 'Click to add Text')
     bodyTextArea.setAttribute('oninput', 'resizeTextarea(this)')
 
     bodyDiv.appendChild(bodyTextArea)
@@ -92,4 +92,29 @@ let createImageDiv = (slide, img_url) =>{
 
     return imageDiv
 
+}
+
+let createlinkDiv = (slide, linkText, linkUrl) => {
+    if (!linkText){
+        linkText = linkUrl
+    }
+
+    const linkDiv  = document.createElement('div')
+    linkDiv.classList.add('linkDiv')
+    linkDiv.style.position = 'absolute'
+    linkDiv.style.padding = '2px'
+    linkDiv.style.top = toPer(getRandomInt(1,5))
+    linkDiv.style.left = toPer(getRandomInt(1,10))
+    slide.appendChild(linkDiv)
+
+    const linkDivLink = document.createElement('a')
+    linkDiv.classList.add('link_div_link')
+    linkDivLink.style.color = 'blue'
+    linkDivLink.setAttribute('target', '_blank')
+    linkDivLink.href = linkUrl
+    linkDivLink.innerText=linkText
+
+    linkDiv.appendChild(linkDivLink)
+
+    return linkDiv
 }

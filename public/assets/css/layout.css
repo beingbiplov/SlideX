@@ -113,22 +113,40 @@ body {
 
 .theme_sec_heading{
     font-size: 1.5em;
-    padding-top: 0.5em;
+    padding-top: 1em;
     padding-bottom: 0.5em;
     text-align: center;
 }
 
 /* right panle ends  */
 
-/* image upload section  */
-.image_upload_section{
-    position:absolute;
-    top: 35%;
-    left: 25%;
-    padding: 25px;
+/* url panle section  */
+
+.linkpanel_inputdiv{
+    padding: 10px 0;
     box-sizing: border-box;
-    background-color: aquamarine;
-    z-index: 2;
+    background-color: #f8f9fa;
+}
+.linkpanel_input {
+    height: 32px;
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 8px;
 }
 
-/* image upload section ends  */
+.linkpanel_btn {
+    padding: 6px 8px;
+    box-sizing: border-box;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.linkpanel_btn:hover{
+    color:#949494;
+}
+
+/* url panlesection ends  */

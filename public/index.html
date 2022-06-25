@@ -149,7 +149,7 @@
                     <div class="bottom_nav--vline">
                         <img src="./assets/images/vert_line.png" alt="add">
                     </div>
-                    <div class="bottom_nav__left--icon">
+                    <div id="add_textbox_btn" class="bottom_nav__left--icon">
                         <a id="add_textbox" href="#">
                             <img class="bottom_nav__left--icon--first" src="./assets/images/textbox.png" alt="add">
                         </a>
@@ -159,7 +159,11 @@
                         <label for="slide_img_input">
                             <img class="bottom_nav__left--icon--first" src="./assets/images/image.png" alt="add">
                         </label>
-                        
+                    </div>
+                    <div id="add_link_btn" class="bottom_nav__left--icon">
+                        <a id="add_link" href="#">
+                            <img class="bottom_nav__left--icon--first" src="./assets/images/link.png" alt="add link">
+                        </a>
                     </div>
 
                     <div class="bottom_nav--vline">
@@ -198,27 +202,8 @@
                         </div>
                     </div>
 
-                    <div class="bottom_nav__left--icon">
-                        <div class="dropdown">
+                    <div id="bottom_nav_theme_select_btn" class="bottom_nav__left--icon">
                             <span class="bottom_nav__left--text">Theme</span>
-                            <div class="bottom_nav__dropdown-content">
-                                <p>
-                                    <a value="0" class="sel_theme--btn" href="#">Simple Dark</a>
-                                </p>
-                                <p>
-                                    <a value="1" class="sel_theme--btn" href="#">Vertical red-teal</a>
-                                </p>
-                                <p>
-                                    <a value="2" class="sel_theme--btn" href="#">Streamline</a>
-                                </p>
-                                <p>
-                                    <a value="3" class="sel_theme--btn" href="#">Beach Day</a>
-                                </p>
-                                <p>
-                                    <a value="4" class="sel_theme--btn" href="#">Blue Horizon</a>
-                                </p>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
@@ -304,5 +289,6 @@
     <script src="./assets/js/drag_elements.js"></script>
     <script src="./assets/js/image_handler.js"></script>
     <script src="./assets/js/slide_image.js"></script>
+    <script src="./assets/js/slide_link.js"></script>
 </body>
 </html>

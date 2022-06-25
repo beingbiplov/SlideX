@@ -14,6 +14,8 @@ class slide{
     newSlide(){
         slidePlaceholder.style.display = 'none'
         imageUploadNavBtn.style.display = 'block'
+        addLinkDiv.style.display = 'block'
+        addTextBoxDiv.style.display = 'block'
 
         let newSlidecls = new CreateSlide(this.workspace, this.slideCls, this.previewWindow)
         this.newSlideDiv = newSlidecls.create()
@@ -74,6 +76,8 @@ class slide{
         if (this.slideCls.length <= 0){
             slidePlaceholder.style.display = 'flex'
             imageUploadNavBtn.style.display = 'none'
+            addLinkDiv.style.display = 'none'
+            addTextBoxDiv.style.display = 'none'
         }
     }
 
@@ -90,6 +94,10 @@ class slide{
 
     addImage(img_url){
         this.activeSlideCls.addImageToSlide(img_url)
+    }
+
+    addLink(linkText, linkUrl){
+        this.activeSlideCls.addLinkToSlide(linkText, linkUrl)
     }
 }
 

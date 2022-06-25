@@ -54,3 +54,17 @@ addTextBoxBtn.addEventListener('click', ()=>{
         slide1.addTextBox()
     }
 })
+
+// add link panel toggle event listener
+addLinkDiv.addEventListener('click', ()=>{
+    if (newRightPanel){
+        newRightPanel.selectActiveRightPanel('link')
+    }
+})
+
+// theme selector panel toggle event listener
+bottomNavThemeSelBtn.addEventListener('click', ()=>{
+    if (newRightPanel){
+        newRightPanel.selectActiveRightPanel('themes')
+    }
+})
