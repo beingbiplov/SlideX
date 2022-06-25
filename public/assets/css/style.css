@@ -169,6 +169,14 @@
     font-size: 0.8rem;
 }
 
+#slide_img_upload_nav_btn{
+    display: none;
+    cursor: pointer;
+}
+#slide_img_upload_nav_btn > label {
+    cursor: pointer;
+}
+
 /* header section ends  */
 
 /* main content section starts  */
@@ -241,6 +249,7 @@
     margin: 0 auto;
     border: 2px solid #9aa0a6;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .preview_section__box.active {
@@ -296,5 +305,19 @@
     background-color: #f8f8f8f8;
 }
 
-
 /* context menu ends  */
+
+/* slide image  */
+
+.slide_img_div{
+    border: none;
+    overflow: hidden;
+}
+
+.slide_img_div:hover{
+    z-index: 2;
+}
+
+
+
+/* slide image ends  */

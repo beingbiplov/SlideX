@@ -82,3 +82,5 @@ contextMenuDel.addEventListener('click', () =>{
 window.addEventListener('click', () =>{
     showContextMenu(false)
 })
+
+let slide_img_upload_nav_btn = document.getElementById('slide_img_upload_nav_btn')

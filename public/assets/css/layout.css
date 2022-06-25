@@ -119,3 +119,16 @@ body {
 }
 
 /* right panle ends  */
+
+/* image upload section  */
+.image_upload_section{
+    position:absolute;
+    top: 35%;
+    left: 25%;
+    padding: 25px;
+    box-sizing: border-box;
+    background-color: aquamarine;
+    z-index: 2;
+}
+
+/* image upload section ends  */

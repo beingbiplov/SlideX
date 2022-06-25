@@ -10,8 +10,6 @@ let createLayoutStructure = (slide) => {
 
 
     const headingTextArea = document.createElement('textarea')
-    // headingTextArea.style.height = toPer(100)
-    // headingTextArea.style.width = toPer(100)
     headingTextArea.classList.add('textareaHeading')
     headingTextArea.setAttribute('placeholder', 'Click to add Title')
     headingTextArea.setAttribute('oninput', 'resizeTextarea(this)')
@@ -27,8 +25,6 @@ let createLayoutStructure = (slide) => {
     slide.appendChild(bodyDiv)
 
     const bodyTextArea = document.createElement('textarea')
-    // bodyTextArea.style.height = toPer(100)
-    // bodyTextArea.style.width = toPer(100)
     bodyTextArea.classList.add('textareaBody')
     bodyTextArea.setAttribute('placeholder', 'Click to add Sub title')
     bodyTextArea.setAttribute('oninput', 'resizeTextarea(this)')
@@ -43,8 +39,6 @@ let createLayoutStructure = (slide) => {
     slide.appendChild(bodyDiv2)
 
     const body2TextArea = document.createElement('textarea')
-    // body2TextArea.style.height = toPer(100)
-    // body2TextArea.style.width = toPer(100)
     body2TextArea.classList.add('textareaBody')
     body2TextArea.setAttribute('placeholder', 'Click to add text')
     body2TextArea.setAttribute('oninput', 'resizeTextarea(this)')

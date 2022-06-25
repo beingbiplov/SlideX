@@ -64,3 +64,32 @@ let createTextBox = (slide) =>{
 
     return [bodyDiv, bodyTextArea]
 }
+
+let createImageDiv = (slide, img_url) =>{
+    let bWidth = percentageOfNum(slide.offsetWidth, 25)
+    let bHeight = percentageOfNum(slide.offsetHeight, 40)
+
+    const imageDiv = document.createElement('div')
+    imageDiv.style.position = 'absolute'
+    imageDiv.style.padding = '2px'
+    imageDiv.style.top = toPer(getRandomInt(1,5))
+    imageDiv.style.left = toPer(getRandomInt(1,10))
+
+    imageDiv.style.height= toPx(bHeight)
+    imageDiv.style.width = toPx(bWidth)
+    imageDiv.classList.add('slide_img_div')
+    imageDiv.style.resize =  'both'
+
+    slide.appendChild(imageDiv)
+
+    let imageDivImg = document.createElement('img')
+    imageDivImg.style.height = toPer(100)
+    imageDivImg.style.width = toPer(100)
+    imageDivImg.src = img_url
+    imageDivImg.addEventListener('mousedown', (e)=>{e.preventDefault()})
+
+    imageDiv.appendChild(imageDivImg)
+
+    return imageDiv
+
+}

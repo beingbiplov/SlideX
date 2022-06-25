@@ -98,6 +98,12 @@ class CreateSlide{
         this.updatePreviewWindow(this.newSlideDiv)
     }
 
+    addImageToSlide(img_url){
+        let imageDiv = new slideImage(this.newSlideDiv, img_url)
+        this.updatePreviewWindow(this.newSlideDiv)
+
+    }
+
     handleDragDrop(heading1, body1, body2){
         handleDrag(this.newSlideDiv, heading1)
         handleDrag(this.newSlideDiv, body1)
