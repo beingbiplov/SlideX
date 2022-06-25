@@ -60,12 +60,45 @@ body {
     width: 13%;
     /* background-color: rgb(187, 215, 215); */
     border-right: 2px solid #ebebeb;
+    overflow: scroll;
+}
+
+.content_section__left::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content_section__left::-webkit-scrollbar-track {
+    background: inherit;
+}
+
+.content_section__left::-webkit-scrollbar-thumb {
+    background: #dadce0;
+}
+
+.content_section__left::-webkit-scrollbar-thumb:hover {
+    background: #787b80;
 }
 
 .content_section__right{
     width: 13%;
     border-left: 2px solid #ebebeb;
-    /* background-color: rgb(143, 145, 118); */
+    overflow: scroll;
+}
+
+.content_section__right::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content_section__right::-webkit-scrollbar-track {
+    background: inherit;
+}
+
+.content_section__right::-webkit-scrollbar-thumb {
+    background: #dadce0;
+}
+
+.content_section__right::-webkit-scrollbar-thumb:hover {
+    background: #787b80;
 }
 
 .content_section__main {
