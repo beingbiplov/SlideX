@@ -75,3 +75,10 @@ bottomNavLayoutSelBtn.addEventListener('click', ()=>{
         newRightPanel.selectActiveRightPanel('layout')
     }
 })
+
+// present slideshow btn event listener
+presentSlideshowBtn.addEventListener('click', ()=>{
+    if (slide1.activeSlideCls){
+        slide1.slideShow()
+    }   
+})

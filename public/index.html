@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/media_query.css">
     <link rel="stylesheet" href="./assets/css/slide_themes.css">
+    <link rel="stylesheet" href="./assets/css/slideshow.css">
     <title>SlideX</title>
 </head>
 <body>
@@ -76,7 +77,7 @@
                     </div>
 
                     <div class="top_nav__right">
-                        <div class="top_nav__right--btn">
+                        <div id="present_slideshow_btn" class="top_nav__right--btn">
                             <a href="#" class="btn present_btn">
                                 <img src="./assets/images/play_btn.png" alt="play buttin">
                                 Slideshow
@@ -251,6 +252,10 @@
 
                     </div> -->
 
+                    <!-- slideshow div -->
+                    <div id="slideshow"></div>
+                    
+
                     <!-- context menu right click  -->
                     <div class="slide_context_menu">
                         <div id="slide_context_menu--del" class="slide_context_menu__item">Delete Slide</div>
@@ -283,5 +288,6 @@
     <script src="./assets/js/image_handler.js"></script>
     <script src="./assets/js/slide_image.js"></script>
     <script src="./assets/js/slide_link.js"></script>
+    <script src="./assets/js/slideshow.js"></script>
 </body>
 </html>

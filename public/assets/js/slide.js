@@ -99,6 +99,10 @@ class slide{
     addLink(linkText, linkUrl){
         this.activeSlideCls.addLinkToSlide(linkText, linkUrl)
     }
+
+    slideShow(){
+        presentSlides(this.slideCls)
+    }
 }
 
 

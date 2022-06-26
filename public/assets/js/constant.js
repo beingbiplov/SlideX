@@ -1,6 +1,7 @@
 const workspace = document.getElementById('workspace')
 const previewWindow = document.getElementById('preview_window')
 const slidePlaceholder = document.getElementsByClassName('content_section__main--placeholder')[0]
+const slideMainSection = document.getElementsByClassName('content_section__main--slide')[0]
 
 const newSlideBtn = document.getElementById('new_slide--btn')
 const addNewSlideBtn = document.getElementById('add_new_slide_bottom_nav_btn')
@@ -23,3 +24,7 @@ const addLinkDiv = document.getElementById('add_link_btn')
 const addTextBoxDiv = document.getElementById('add_textbox_btn')
 const bottomNavThemeSelBtn = document.getElementById('bottom_nav_theme_select_btn')
 const bottomNavLayoutSelBtn = document.getElementById('bottom_nav_layout_select_btn')
+
+const slideShowDiv = document.getElementById('slideshow')
+const presentSlideshowBtn = document.getElementById('present_slideshow_btn')
+
