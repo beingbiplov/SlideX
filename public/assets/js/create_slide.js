@@ -116,6 +116,10 @@ class CreateSlide{
         let linkDiv = new slideLink(this.newSlideDiv, linkText, linkUrl)
     }
 
+    addListToSlide(listType){
+        let listDiv = new slideList(this.newSlideDiv, listType)
+    }
+
     handleDragDrop(heading1, body1, body2){
         handleDrag(this.newSlideDiv, heading1)
         handleDrag(this.newSlideDiv, body1)

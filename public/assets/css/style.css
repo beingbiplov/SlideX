@@ -178,11 +178,11 @@
 }
 
 #add_link_btn{
-    display: none;
+    /* display: none; */
 }
 
 #add_textbox_btn{
-    display: none;
+    /* display: none; */
 }
 
 #bottom_nav_theme_select_btn{

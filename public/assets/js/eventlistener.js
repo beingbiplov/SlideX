@@ -82,3 +82,17 @@ presentSlideshowBtn.addEventListener('click', ()=>{
         slide1.slideShow()
     }   
 })
+
+// adding ordered and unorderes list btns
+addULBtn.addEventListener('click', ()=>{
+    if (slide1.activeSlideCls){
+        slide1.addList('ul')
+    }
+    
+})
+
+addOLBtn.addEventListener('click', ()=>{
+    if (slide1.activeSlideCls){
+       slide1.addList('ol')
+    }
+})

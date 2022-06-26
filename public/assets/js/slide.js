@@ -76,8 +76,6 @@ class slide{
         if (this.slideCls.length <= 0){
             slidePlaceholder.style.display = 'flex'
             imageUploadNavBtn.style.display = 'none'
-            addLinkDiv.style.display = 'none'
-            addTextBoxDiv.style.display = 'none'
         }
     }
 
@@ -98,6 +96,10 @@ class slide{
 
     addLink(linkText, linkUrl){
         this.activeSlideCls.addLinkToSlide(linkText, linkUrl)
+    }
+
+    addList(listType){
+        this.activeSlideCls.addListToSlide(listType)
     }
 
     slideShow(){

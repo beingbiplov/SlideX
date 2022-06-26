@@ -28,3 +28,6 @@ const bottomNavLayoutSelBtn = document.getElementById('bottom_nav_layout_select_
 const slideShowDiv = document.getElementById('slideshow')
 const presentSlideshowBtn = document.getElementById('present_slideshow_btn')
 
+const addULBtn = document.getElementById('add_ul_btn')
+const addOLBtn = document.getElementById('add_ol_btn')
+
