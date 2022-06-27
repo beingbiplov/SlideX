@@ -217,3 +217,16 @@ function handleFontSizeInputValue(fontSize, fontSizeInput){
 function handleFontFamily(font, fontSelector){
     fontSelector.value = font
 }
+
+
+//to change theme of slides 
+function changeSlidesTheme(slides, activeThemeIdx, themeIdx){
+    let themeClass = themeList[themeIdx]
+    let activeThemeClass = themeList[activeThemeIdx]
+    
+    for (slideClass of slides){
+        slideClass.newSlideDiv.classList.remove(activeThemeClass)
+        slideClass.newSlideDiv.classList.add(themeClass)
+        slideClass.updatePreviewWindow(slideClass.newSlideDiv)
+    }
+}

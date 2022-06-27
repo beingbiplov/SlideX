@@ -1,6 +1,6 @@
 
 class CreateSlide{
-    constructor(workspace, slideCls, previewWindow){
+    constructor(workspace, slideCls, previewWindow, themeIdx){
         this.newSlideDiv
         this.slideCls = slideCls
         this.workspace = workspace
@@ -11,7 +11,6 @@ class CreateSlide{
         this.imageList = []
         this.linkList = []
         this.listItemList = []
-        this.slideThemeIdx
         this.heading1
         this.body1
         this.body2
@@ -43,7 +42,8 @@ class CreateSlide{
             'fontFamily': 'Roboto',
             'underline': false
         }
-        this.activeLayout
+        this.activeLayout,
+        this.activeThemeIdx = themeIdx
     }
 
     create(){
@@ -77,6 +77,8 @@ class CreateSlide{
         handlecloseBtnDisplay(this.heading1, this.closeBtnHeading)
         handlecloseBtnDisplay(this.body1, this.closeBtnBody1)
         handlecloseBtnDisplay(this.body2, this.closeBtnBody2)
+
+        this.setSlideTheme(this.activeThemeIdx)
        
         return this.newSlideDiv
     }
@@ -114,6 +116,7 @@ class CreateSlide{
         this.previewSectionWin.innerHTML = ''
         this.newSLideClone = slide.cloneNode(true)
         this.newSLideClone.classList.add('preview_section__window--slide')
+        this.newSLideClone.style.display = 'block'
         this.previewSectionWin.appendChild(this.newSLideClone)
 
     }
@@ -125,16 +128,8 @@ class CreateSlide{
         this.updatePreviewWindow(this.newSlideDiv)
     }
 
-    changeSlideTheme(themeIdx){
+    setSlideTheme(themeIdx){
         let themeClass = themeList[themeIdx]
-        this.slideThemeIdx = themeIdx
-
-        for (let theme of themeList){
-            if (this.newSlideDiv.classList.contains(theme)){
-                this.newSlideDiv.classList.remove(theme)
-            }
-
-        }
 
         this.newSlideDiv.classList.add(themeClass)
         this.updatePreviewWindow(this.newSlideDiv)

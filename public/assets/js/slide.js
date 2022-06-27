@@ -10,6 +10,7 @@ class slide{
         this.slideCls = []
         this.activeSlideCls
         this.activeLayoutTextarea
+        this.activeThemeIdx = 0
     }
 
     newSlide(){
@@ -18,7 +19,7 @@ class slide{
         addLinkDiv.style.display = 'block'
         addTextBoxDiv.style.display = 'block'
 
-        let newSlidecls = new CreateSlide(this.workspace, this.slideCls, this.previewWindow)
+        let newSlidecls = new CreateSlide(this.workspace, this.slideCls, this.previewWindow, this.activeThemeIdx)
         this.newSlideDiv = newSlidecls.create()
         this.slideCls.push(newSlidecls)
         this.updatePreviewWindow = newSlidecls.updatePreviewWindow
@@ -85,7 +86,8 @@ class slide{
         if(!this.activeSlideCls){
             this.newSlide()
         }
-        this.activeSlideCls.changeSlideTheme(themeIdx)
+        changeSlidesTheme(this.slideCls,this.activeThemeIdx, themeIdx)
+        this.activeThemeIdx = themeIdx
     }
 
     addTextBox(){
