@@ -104,7 +104,7 @@ let createLayoutStructure = (slide) => {
     bodyDiv2.appendChild(body2TextArea)
     body2TextArea.addEventListener('mousedown', (e)=>{e.stopPropagation()})
 
-    return ([headingDiv, bodyDiv, bodyDiv2, closeBtn, bodyCloseBtn, body2CloseBtn])
+    return ([headingDiv, bodyDiv, bodyDiv2, closeBtn, bodyCloseBtn, body2CloseBtn, headingTextArea, bodyTextArea, body2TextArea])
 }
 
 

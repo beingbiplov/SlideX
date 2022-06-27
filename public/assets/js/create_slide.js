@@ -15,6 +15,30 @@ class CreateSlide{
         this.closeBtnBody1
         this.closeBtnBody2
         this.activeTextBoxCls
+        this.headingTextArea
+        this.bodyTextArea
+        this.body2TextArea
+        this.headingTextAreaTypography = {
+            'bold': false,
+            'italic': false,
+            'fontSize': 32,
+            'fontFamily': 'Roboto',
+            'underline': false
+        }
+        this.bodyTextAreaTypography = {
+            'bold': false,
+            'italic': false,
+            'fontSize': 32,
+            'fontFamily': 'Roboto',
+            'underline': false
+        }
+        this.body2TextAreaTypography = {
+            'bold': false,
+            'italic': false,
+            'fontSize': 32,
+            'fontFamily': 'Roboto',
+            'underline': false
+        }
     }
 
     create(){
@@ -29,6 +53,9 @@ class CreateSlide{
         this.closeBtnHeading = createdLayouts[3]
         this.closeBtnBody1 = createdLayouts[4]
         this.closeBtnBody2 = createdLayouts[5]
+        this.headingTextArea = createdLayouts[6]
+        this.bodyTextArea = createdLayouts[7]
+        this.body2TextArea = createdLayouts[8]
 
         this.handleDragDrop(this.heading1, this.body1, this.body2)
         handlecloseBtnDisplay(this.heading1, this.closeBtnHeading)
@@ -178,5 +205,95 @@ class CreateSlide{
         handleDrag(this.newSlideDiv, heading1)
         handleDrag(this.newSlideDiv, body1)
         handleDrag(this.newSlideDiv, body2)
+    }
+
+    getTypography(activeTextarea){
+        let typography
+        if (activeTextarea == this.headingTextArea){
+            typography = this.headingTextAreaTypography
+        }else if(activeTextarea = this.bodyTextArea){
+            typography = this.bodyTextAreaTypography
+        }
+        else if(activeTextarea = this.body2TextArea){
+            typography = this.body2TextAreaTypography
+        }
+        return typography
+    }
+
+    changeLayoutTextareaFontWeight(activeTextarea){
+        
+        let typography = this.getTypography(activeTextarea)
+        
+        if (typography['bold']){
+            activeTextarea.style.fontWeight = 'normal'
+            typography['bold'] = false
+            handleTypographyIconBG(typography['bold'], boldTextBtn)
+        }
+        else{
+            activeTextarea.style.fontWeight = 'bold'
+            typography['bold'] = true
+            handleTypographyIconBG(typography['bold'], boldTextBtn)
+        }
+    }
+
+    changeLayoutTextareaFontSize(activeTextarea){
+
+        let typography = this.getTypography(activeTextarea)
+        let fontSizeVal = fontSizeInput.value
+        
+        if (fontSizeVal > 5 && fontSizeVal <= 96){
+            typography['fontSize'] = fontSizeVal
+            activeTextarea.style.fontSize = toPx(typography['fontSize'])
+        }
+        else if(fontSizeVal < 6){
+            typography['fontSize'] = 6
+            activeTextarea.style.fontSize = toPx(typography['fontSize'])
+            handleFontSizeInputValue(typography['fontSize'], fontSizeInput)
+        }else{
+            typography['fontSize'] = 96
+            activeTextarea.style.fontSize = toPx(typography['fontSize'])
+            handleFontSizeInputValue(typography['fontSize'], fontSizeInput)
+        }
+    }
+    changeLayoutTextareaFontStyle(activeTextarea){
+        let typography = this.getTypography(activeTextarea)
+        
+        if (typography['italic']){
+            activeTextarea.style.fontStyle = 'normal'
+            typography['italic'] = false
+            handleTypographyIconBG(typography['italic'], italicTextBtn)
+        }
+        else{
+            activeTextarea.style.fontStyle = 'italic'
+            typography['italic'] = true
+            handleTypographyIconBG(typography['italic'], italicTextBtn)
+        }
+    }
+
+    changeLayoutTextareaFontDecor(activeTextarea){
+        
+        let typography = this.getTypography(activeTextarea)
+        
+        if (typography['underline']){
+            console.log('und')
+            activeTextarea.style.textDecoration = 'none'
+            typography['underline'] = false
+            handleTypographyIconBG(typography['underline'], underlineTextBtn)
+        }
+        else{
+            activeTextarea.style.textDecoration = 'underline'
+            typography['underline'] = true
+            handleTypographyIconBG(typography['underline'], underlineTextBtn)
+        }
+    }
+
+    changeLayoutTextareaFont(activeTextarea){
+        let typography = this.getTypography(activeTextarea)
+        
+        let selectedFont = fontSelector.value
+        if(typography['fontFamily'] != selectedFont){
+            activeTextarea.style.fontFamily = selectedFont
+            typography['fontFamily'] = selectedFont
+        }
     }
 }

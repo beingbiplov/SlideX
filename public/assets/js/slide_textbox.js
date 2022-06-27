@@ -72,7 +72,7 @@ class textBox{
 
     changeTextFontDecor(){
         if (this.textUnderline){
-            this.bodyTextArea.style.textDecoration = 'normal'
+            this.bodyTextArea.style.textDecoration = 'none'
             this.textUnderline = false
             handleTypographyIconBG(this.textUnderline, underlineTextBtn)
         }
