@@ -139,3 +139,13 @@ fontSelector.addEventListener('change', (e) =>{
         slide1.handleTextFont()
     }
 })
+
+colorPicker.addEventListener('click', (e) =>{
+        e.stopPropagation()
+})
+
+colorPicker.addEventListener('input', (e) =>{
+    if (slide1.activeSlideCls){
+        slide1.handleFontColor()
+    }
+})

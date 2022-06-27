@@ -12,6 +12,7 @@ class textBox{
         this.textUnderline = false
         this.fontSize = 32
         this.textFont = 'Roboto'
+        this.fontColor = "#000000"
         this.bodyPosition = {
             'top' :getRandomInt(200,300),
             'left': getRandomInt(10,50)
@@ -101,6 +102,13 @@ class textBox{
             this.bodyTextArea.style.fontFamily = selectedFont
             this.textFont = selectedFont
         }
+    }
+
+    changeFontColor(){
+        let fontColorVal = colorPicker.value
+        this.bodyTextArea.style.color = fontColorVal
+        this.fontColor = fontColorVal
+        handleFontSizeInputValue(this.fontColor, colorPicker)
     }
 
     getData(){
