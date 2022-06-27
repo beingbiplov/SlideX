@@ -4,6 +4,7 @@ function presentSlides(slideCls){
     let slideIdx = 0
 
     let slideShow = () =>{
+        slideShowDiv.innerHTML = ''
         slideShowDiv.style.display = 'block'
         const slideShowContainer = document.createElement('div')
         slideShowContainer.classList.add('slideshow_container')
@@ -15,6 +16,7 @@ function presentSlides(slideCls){
 
         for (let slideClass of slideCls){
             let newSlide = document.createElement('div')
+            newSlide.classList.add('slide_new')
             newSlide.style.width= '100%'
             newSlide.style.height= '100%'
             newSlide.classList.add('fade')
@@ -92,6 +94,10 @@ function presentSlides(slideCls){
                     slideIdx--
                 }
             }
+            else if (e.key == 'Escape'){
+                console.log('asd')
+                closeFullscreen()
+            }
         }
     }
 
@@ -118,4 +124,12 @@ function presentSlides(slideCls){
         document.msExitFullscreen();
     }
     }
+
+    // document.onkeydown = (e) =>{
+    //     if (e.key == 'Escape'){
+    //         console.log('asd')
+    //         closeFullscreen()
+    //     }
+    // }
 }
+

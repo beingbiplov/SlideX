@@ -189,6 +189,10 @@
     cursor: pointer;
 }
 
+.font-size-input {
+    width: 32px;
+    text-align: center;
+}
 /* header section ends  */
 
 /* main content section starts  */
@@ -291,6 +295,11 @@
     -webkit-transform: scale(0.15);
     -webkit-transform-origin: 0 0;
 }
+
+/* .slide_new > *{
+    -webkit-transform: scale(1.70);
+    -webkit-transform-origin: 0 0;
+} */
 /* left side panel ends  */
 
 

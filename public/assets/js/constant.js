@@ -30,4 +30,8 @@ const presentSlideshowBtn = document.getElementById('present_slideshow_btn')
 
 const addULBtn = document.getElementById('add_ul_btn')
 const addOLBtn = document.getElementById('add_ol_btn')
-
+const boldTextBtn = document.getElementById('bold_text_btn')
+const fontSizeInput = document.getElementById('font-size-input')
+const italicTextBtn = document.getElementById('italic_text_btn')
+const underlineTextBtn = document.getElementById('underline_text_btn')
+const fontSelector = document.getElementById('slide_text_font')

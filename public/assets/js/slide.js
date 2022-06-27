@@ -105,6 +105,27 @@ class slide{
     slideShow(){
         presentSlides(this.slideCls)
     }
+
+    handleFontWeight(){
+        this.activeSlideCls.changeFontWeight()
+    }
+
+    handleFontSize(){
+        this.activeSlideCls.changeFontSize()
+    }
+    
+    handleFontStyle(){
+        this.activeSlideCls.changeFontStyle()
+    }
+
+    handleFontDecor(){
+        this.activeSlideCls.changeFontDecor()
+    }
+
+    handleTextFont(){
+        this.activeSlideCls.changeTextFont()
+    }
+    
 }
 
 

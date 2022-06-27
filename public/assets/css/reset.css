@@ -68,3 +68,44 @@ textarea:focus {
 .element_close_btn{
     display: none;
 }
+
+
+/* remove increase decrease btns fom number input  */
+.font-size-input::-webkit-outer-spin-button,
+.font-size-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* fonts  */
+.roboto{
+    font-family: 'roboto' , sans-serif;
+}
+
+.arial {
+    font-family: Arial, sans-serif;
+}
+
+.cursive {
+    font-family: cursive, sans-serif;
+}
+
+.caveat{
+    font-family: caveat, sans-serif;;
+}
+
+.fantasy {
+    font-family: fantasy, sans-serif;;
+}
+
+.open_sans{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.montserrat{
+    font-family: 'Montserrat', sans-serif;
+}

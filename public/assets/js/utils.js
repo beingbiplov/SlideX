@@ -204,3 +204,23 @@ function handlecloseBtnDisplay(elementDiv, btn){
 function closeBtnAction(elementDiv){
     elementDiv.remove()
 }
+
+
+// handle typography icons background
+function handleTypographyIconBG(typoEvent, icon){
+    if (typoEvent){
+        icon.style.backgroundColor = '#fde293'
+    }
+    else{
+        icon.style.backgroundColor = ''
+    }  
+}
+
+function handleFontSizeInputValue(fontSize, fontSizeInput){
+    fontSizeInput.value = fontSize
+
+}
+
+function handleFontFamily(font, fontSelector){
+    fontSelector.value = font
+}

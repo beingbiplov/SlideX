@@ -14,6 +14,7 @@ class CreateSlide{
         this.closeBtnHeading
         this.closeBtnBody1
         this.closeBtnBody2
+        this.activeTextBoxCls
     }
 
     create(){
@@ -103,8 +104,61 @@ class CreateSlide{
 
     addTextBoxToSlide(){
         let textboxCls = new textBox(this.newSlideDiv)
-        let textboxDiv = textboxCls.create()
+        let bodyTextArea = textboxCls.create()
         this.updatePreviewWindow(this.newSlideDiv)
+
+        bodyTextArea.addEventListener('focus', (e)=>{
+            this.activeTextBoxCls = textboxCls
+            handleTypographyIconBG(textboxCls.textBold, boldTextBtn)
+            handleFontSizeInputValue(textboxCls.fontSize, fontSizeInput)
+            handleTypographyIconBG(textboxCls.textItalic, italicTextBtn)
+            handleTypographyIconBG(textboxCls.textUnderline, underlineTextBtn)
+            handleFontFamily(textboxCls.textFont, fontSelector)
+        })
+
+        bodyTextArea.addEventListener('click', (e)=>{
+            e.stopPropagation()
+        })
+
+        document.addEventListener('click', () =>{
+            this.activeTextBoxCls = ''
+            handleTypographyIconBG(false, boldTextBtn)
+            handleFontSizeInputValue(16, fontSizeInput)
+            handleTypographyIconBG(false, italicTextBtn)
+            handleTypographyIconBG(false, underlineTextBtn)
+            handleFontFamily('Arial', fontSelector)
+        })
+        
+    }
+
+    changeFontWeight(){
+        if (this.activeTextBoxCls){
+            this.activeTextBoxCls.changeTextFontWeight()
+        }
+    }
+
+    changeFontSize(){
+        if (this.activeTextBoxCls){
+            this.activeTextBoxCls.changeTextFontSize()
+        }
+    }
+
+    changeFontStyle(){
+        if (this.activeTextBoxCls){
+            this.activeTextBoxCls.changeTextFontStyle()
+        }
+    }
+
+    changeFontDecor(){
+        if (this.activeTextBoxCls){
+            this.activeTextBoxCls.changeTextFontDecor()
+        }
+    }
+
+    changeTextFont(){
+        if (this.activeTextBoxCls){
+            this.activeTextBoxCls.changeTextFont()
+        }
     }
 
     addImageToSlide(img_url){

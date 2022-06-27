@@ -96,3 +96,46 @@ addOLBtn.addEventListener('click', ()=>{
        slide1.addList('ol')
     }
 })
+
+// typography btn events 
+boldTextBtn.addEventListener('click', (e) =>{
+    if (slide1.activeSlideCls){
+        e.stopPropagation()
+        slide1.handleFontWeight()
+    }
+    
+})
+
+fontSizeInput.addEventListener('click', (e) =>{
+    e.stopPropagation()
+})
+
+fontSizeInput.addEventListener('change', () =>{
+    if (slide1.activeSlideCls){
+        slide1.handleFontSize()
+    }
+})
+
+italicTextBtn.addEventListener('click', (e) =>{
+    if (slide1.activeSlideCls){
+        e.stopPropagation()
+        slide1.handleFontStyle()
+    }
+})
+
+underlineTextBtn.addEventListener('click', (e) =>{
+    if (slide1.activeSlideCls){
+        e.stopPropagation()
+        slide1.handleFontDecor()
+    }
+})
+
+fontSelector.addEventListener('click', (e) =>{
+        e.stopPropagation()
+})
+
+fontSelector.addEventListener('change', (e) =>{
+    if (slide1.activeSlideCls){
+        slide1.handleTextFont()
+    }
+})
