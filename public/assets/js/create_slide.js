@@ -8,6 +8,10 @@ class CreateSlide{
         this.previewWindow = previewWindow
         this.previewSectionWin
         this.textBoxList = []
+        this.imageList = []
+        this.linkList = []
+        this.listItemList = []
+        this.slideThemeIdx
         this.heading1
         this.body1
         this.body2
@@ -39,6 +43,7 @@ class CreateSlide{
             'fontFamily': 'Roboto',
             'underline': false
         }
+        this.activeLayout
     }
 
     create(){
@@ -57,14 +62,22 @@ class CreateSlide{
         this.bodyTextArea = createdLayouts[7]
         this.body2TextArea = createdLayouts[8]
 
+        
+        defaultLayout(
+            this.newSlideDiv, 
+            this.heading1, 
+            this.body1, 
+            this.body2, 
+        )
+
+        this.activeLayout = defaultLayout
+        
+        this.addSlideTOPreview(this.newSlideDiv)
         this.handleDragDrop(this.heading1, this.body1, this.body2)
         handlecloseBtnDisplay(this.heading1, this.closeBtnHeading)
         handlecloseBtnDisplay(this.body1, this.closeBtnBody1)
         handlecloseBtnDisplay(this.body2, this.closeBtnBody2)
-
-        defaultLayout(this.newSlideDiv, this.heading1, this.body1, this.body2)
-        
-        this.addSlideTOPreview(this.newSlideDiv)
+       
         return this.newSlideDiv
     }
 
@@ -108,11 +121,13 @@ class CreateSlide{
     selectLayout(layout) {
         // this.newSlideDiv.innerHTML = ''
         layout(this.newSlideDiv, this.heading1, this.body1, this.body2)
+        this.activeLayout = layout
         this.updatePreviewWindow(this.newSlideDiv)
     }
 
     changeSlideTheme(themeIdx){
         let themeClass = themeList[themeIdx]
+        this.slideThemeIdx = themeIdx
 
         for (let theme of themeList){
             if (this.newSlideDiv.classList.contains(theme)){
@@ -133,6 +148,7 @@ class CreateSlide{
         let textboxCls = new textBox(this.newSlideDiv)
         let bodyTextArea = textboxCls.create()
         this.updatePreviewWindow(this.newSlideDiv)
+        this.textBoxList.push(textboxCls)
 
         bodyTextArea.addEventListener('focus', (e)=>{
             this.activeTextBoxCls = textboxCls
@@ -190,15 +206,18 @@ class CreateSlide{
 
     addImageToSlide(img_url){
         let imageDiv = new slideImage(this.newSlideDiv, img_url)
+        this.imageList.push(imageDiv)
         this.updatePreviewWindow(this.newSlideDiv)
     }
 
     addLinkToSlide(linkText, linkUrl){
         let linkDiv = new slideLink(this.newSlideDiv, linkText, linkUrl)
+        this.linkList.push(linkDiv)
     }
 
     addListToSlide(listType){
         let listDiv = new slideList(this.newSlideDiv, listType)
+        this.listItemList.push(listDiv)
     }
 
     handleDragDrop(heading1, body1, body2){
@@ -295,5 +314,56 @@ class CreateSlide{
             activeTextarea.style.fontFamily = selectedFont
             typography['fontFamily'] = selectedFont
         }
+    }
+
+    getSlideData(){
+        let data = {
+            'textbox' : [],
+            'image' : [],
+            'link': [],
+            'list' : [],
+            'layout' :{
+                'active' : this.activeLayout,
+                'headingDiv': {
+                        'height': this.heading1.offsetHeight,
+                        'weight': this.heading1.offsetWidth,
+                        'top': this.heading1.offsetWidth,
+                        'left': this.heading1.offsetLeft,
+                        'content': this.headingTextArea.value,
+                        'typography' : this.headingTextAreaTypography
+                    },
+                'body1Div': {
+                        'height': this.body1.offsetHeight,
+                        'weight': this.body1.offsetWidth,
+                        'top': this.body1.offsetWidth,
+                        'left': this.body1.offsetLeft,
+                        'content': this.bodyTextArea.value,
+                        'typography' : this.bodyTextAreaTypography
+                    },
+                'body2Div': {
+                        'height': this.body2.offsetHeight,
+                        'weight': this.body2.offsetWidth,
+                        'top': this.body2.offsetWidth,
+                        'left': this.body2.offsetLeft,
+                        'content': this.body2TextArea.value,
+                        'typography' : this.body2TextAreaTypography
+                    }
+            }
+        }
+
+        for (let textbox of this.textBoxList){
+            data['textbox'].push(textbox.getData())
+        }
+        for (let img of this.imageList){
+            data['image'].push(img.getData())
+        }
+        for (let link of this.linkList){
+            data['link'].push(link.getData())
+        }
+        for (let list of this.listItemList){
+            data['list'].push(list.getData())
+        }
+
+        return(data)
     }
 }

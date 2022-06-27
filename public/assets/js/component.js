@@ -9,8 +9,6 @@ const createListBox = (slide, listType) => {
     listBoxDiv.classList.add('slide_listBox')
     listBoxDiv.style.position = 'absolute'
     listBoxDiv.style.padding = '2px'
-    listBoxDiv.style.top = toPer(getRandomInt(1,5))
-    listBoxDiv.style.left = toPer(getRandomInt(1,10))
     slide.appendChild(listBoxDiv)
 
     const listCloseBtnDiv = document.createElement('div')
@@ -52,6 +50,6 @@ const createListBox = (slide, listType) => {
     let listItemLI = document.createElement('li')
     listItemUL.appendChild(listItemLI)
 
-    return [listBoxDiv, listCloseBtn]
+    return [listBoxDiv, listCloseBtn, listItemDiv]
 
 }

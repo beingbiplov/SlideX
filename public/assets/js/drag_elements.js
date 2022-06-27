@@ -1,4 +1,4 @@
-function handleDrag(dragContainer, dragElement){
+function handleDrag(dragContainer, dragElement, bodyPosition){
 
     function onDrag({movementX, movementY}){
 
@@ -11,6 +11,11 @@ function handleDrag(dragContainer, dragElement){
         if(newLeftVal > -dragElement.offsetWidth && (newLeftVal) < dragContainer.offsetWidth && newTopVal > -(dragElement.offsetHeight) && newTopVal < dragContainer.offsetHeight){
             dragElement.style.left = toPx(newLeftVal)
             dragElement.style.top = toPx(newTopVal)
+            if (bodyPosition){
+                bodyPosition['top'] = newTopVal
+                bodyPosition['left'] = newLeftVal
+            }
+            
         }
 
         dragElement.style.cursor = 'move'
@@ -31,4 +36,5 @@ function handleDrag(dragContainer, dragElement){
         dragContainer.removeEventListener("mousemove", onDrag);
     });
 
+    
 }

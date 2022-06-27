@@ -50,9 +50,6 @@ let createTextBox = (slide) =>{
     bodyDiv.style.boxSizing = 'border-box'
     bodyDiv.style.display = 'inline-block'
 
-    bodyDiv.style.top = toPer(getRandomInt(18,70))
-    bodyDiv.style.left = toPer(10)
-
     slide.appendChild(bodyDiv)
 
     const bodyCloseBtnDiv = document.createElement('div')
@@ -95,8 +92,6 @@ let createImageDiv = (slide, img_url) =>{
     const imageDiv = document.createElement('div')
     imageDiv.style.position = 'absolute'
     imageDiv.style.padding = '2px'
-    imageDiv.style.top = toPer(getRandomInt(1,5))
-    imageDiv.style.left = toPer(getRandomInt(1,10))
 
     imageDiv.style.height= toPx(bHeight+ 50)
     imageDiv.style.width = toPx(bWidth)
@@ -152,8 +147,6 @@ let createlinkDiv = (slide, linkText, linkUrl) => {
     linkDiv.classList.add('linkDiv')
     linkDiv.style.position = 'absolute'
     linkDiv.style.padding = '10px'
-    linkDiv.style.top = toPer(getRandomInt(1,5))
-    linkDiv.style.left = toPer(getRandomInt(1,10))
     slide.appendChild(linkDiv)
 
     const linkCloseBtnDiv = document.createElement('div')

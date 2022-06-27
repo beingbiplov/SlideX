@@ -12,12 +12,24 @@ class textBox{
         this.textUnderline = false
         this.fontSize = 32
         this.textFont = 'Roboto'
+        this.bodyPosition = {
+            'top' :getRandomInt(200,300),
+            'left': getRandomInt(10,50)
+        }
+        this.textAreaContent
     }
 
     create(){
         [this.textboxDiv, this.bodyTextArea, this.bodyCloseBtn] = createTextBox(this.slide)
+
+        this.textboxDiv.style.top = toPx(this.bodyPosition['top'])
+        this.textboxDiv.style.left = toPx(this.bodyPosition['left'])
         
         handlecloseBtnDisplay(this.textboxDiv, this.bodyCloseBtn)
+
+        this.bodyTextArea.addEventListener('change', function(){
+            this.textAreaContent = this.bodyTextArea.value
+        }.bind(this))
 
         this.handleTextAreaDrag()
         // this.handleTypography()
@@ -25,7 +37,7 @@ class textBox{
     }
 
     handleTextAreaDrag(){
-        handleDrag(this.slide, this.textboxDiv)
+       handleDrag(this.slide, this.textboxDiv, this.bodyPosition)
     }
 
     changeTextFontWeight(){
@@ -89,5 +101,25 @@ class textBox{
             this.bodyTextArea.style.fontFamily = selectedFont
             this.textFont = selectedFont
         }
+    }
+
+    getData(){
+        let position = this.bodyPosition
+        let data = {
+            'typography' : {
+                'bold': this.textBold,
+                'italic': this.textItalic,
+                'fontSize': this.fontSize,
+                'fontFamily': this.textFont,
+                'underline': this.textUnderline
+            },
+            'position' :position,
+            'content' : this.textAreaContent,
+            'dimension': {
+                'height' : this.textboxDiv.offsetHeight,
+                'width' : this.textboxDiv.offsetWidth
+            }
+        }
+        return(data)
     }
 }

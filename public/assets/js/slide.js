@@ -153,45 +153,49 @@ class slide{
         let bodyTextarea = newSlidecls.bodyTextArea
         let body2Textarea = newSlidecls.body2TextArea
 
-       
-        headingTextarea.addEventListener('focus', (e)=>{
-            this.activeLayoutTextarea = headingTextarea
-            handleTypographyIconBG(newSlidecls.headingTextAreaTypography['bold'], boldTextBtn)
-            handleFontSizeInputValue(newSlidecls.headingTextAreaTypography['fontSize'], fontSizeInput)
-            handleTypographyIconBG(newSlidecls.headingTextAreaTypography['italic'], italicTextBtn)
-            handleTypographyIconBG(newSlidecls.headingTextAreaTypography['underline'], underlineTextBtn)
-            handleFontFamily(newSlidecls.headingTextAreaTypography['fontFamily'], fontSelector)
-        })
+        if (headingTextarea){
+            headingTextarea.addEventListener('focus', (e)=>{
+                this.activeLayoutTextarea = headingTextarea
+                handleTypographyIconBG(newSlidecls.headingTextAreaTypography['bold'], boldTextBtn)
+                handleFontSizeInputValue(newSlidecls.headingTextAreaTypography['fontSize'], fontSizeInput)
+                handleTypographyIconBG(newSlidecls.headingTextAreaTypography['italic'], italicTextBtn)
+                handleTypographyIconBG(newSlidecls.headingTextAreaTypography['underline'], underlineTextBtn)
+                handleFontFamily(newSlidecls.headingTextAreaTypography['fontFamily'], fontSelector)
+            })
 
-        bodyTextarea.addEventListener('focus', (e)=>{
-            this.activeLayoutTextarea = bodyTextarea
-            handleTypographyIconBG(newSlidecls.bodyTextAreaTypography['bold'], boldTextBtn)
-            handleFontSizeInputValue(newSlidecls.bodyTextAreaTypography['fontSize'], fontSizeInput)
-            handleTypographyIconBG(newSlidecls.bodyTextAreaTypography['italic'], italicTextBtn)
-            handleTypographyIconBG(newSlidecls.bodyTextAreaTypography['underline'], underlineTextBtn)
-            handleFontFamily(newSlidecls.bodyTextAreaTypography['fontFamily'], fontSelector)
-        })
+            headingTextarea.addEventListener('click', (e)=>{
+                e.stopPropagation()
+            })
+        }
 
-        body2Textarea.addEventListener('focus', (e)=>{
-            this.activeLayoutTextarea = body2Textarea
-            handleTypographyIconBG(newSlidecls.body2TextAreaTypography['bold'], boldTextBtn)
-            handleFontSizeInputValue(newSlidecls.body2TextAreaTypography['fontSize'], fontSizeInput)
-            handleTypographyIconBG(newSlidecls.body2TextAreaTypography['italic'], italicTextBtn)
-            handleTypographyIconBG(newSlidecls.body2TextAreaTypography['underline'], underlineTextBtn)
-            handleFontFamily(newSlidecls.body2TextAreaTypography['fontFamily'], fontSelector)
-        })
+        if (bodyTextarea){
+            bodyTextarea.addEventListener('focus', (e)=>{
+                this.activeLayoutTextarea = bodyTextarea
+                handleTypographyIconBG(newSlidecls.bodyTextAreaTypography['bold'], boldTextBtn)
+                handleFontSizeInputValue(newSlidecls.bodyTextAreaTypography['fontSize'], fontSizeInput)
+                handleTypographyIconBG(newSlidecls.bodyTextAreaTypography['italic'], italicTextBtn)
+                handleTypographyIconBG(newSlidecls.bodyTextAreaTypography['underline'], underlineTextBtn)
+                handleFontFamily(newSlidecls.bodyTextAreaTypography['fontFamily'], fontSelector)
+            })
 
-        headingTextarea.addEventListener('click', (e)=>{
-            e.stopPropagation()
-        })
-        
-        bodyTextarea.addEventListener('click', (e)=>{
-            e.stopPropagation()
-        })
+            bodyTextarea.addEventListener('click', (e)=>{
+                e.stopPropagation()
+            })
+        }
 
-        body2Textarea.addEventListener('click', (e)=>{
-            e.stopPropagation()
-        })
+        if (body2Textarea){
+            body2Textarea.addEventListener('focus', (e)=>{
+                this.activeLayoutTextarea = body2Textarea
+                handleTypographyIconBG(newSlidecls.body2TextAreaTypography['bold'], boldTextBtn)
+                handleFontSizeInputValue(newSlidecls.body2TextAreaTypography['fontSize'], fontSizeInput)
+                handleTypographyIconBG(newSlidecls.body2TextAreaTypography['italic'], italicTextBtn)
+                handleTypographyIconBG(newSlidecls.body2TextAreaTypography['underline'], underlineTextBtn)
+                handleFontFamily(newSlidecls.body2TextAreaTypography['fontFamily'], fontSelector)
+            })
+            body2Textarea.addEventListener('click', (e)=>{
+                e.stopPropagation()
+            })
+        }
 
         document.addEventListener('click', () =>{
             this.activeLayoutTextarea = ''
@@ -203,6 +207,19 @@ class slide{
         })
     }
     
+    getSlidesData(){
+        let slideData = []
+        for (let slide of this.slideCls){
+            slideData.push(slide.getSlideData())
+        }
+
+        let data ={
+            'slideData' : slideData,
+        }
+
+        return data
+    }
+
 }
 
 
