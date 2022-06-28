@@ -296,10 +296,10 @@
     -webkit-transform-origin: 0 0;
 }
 
-/* .slide_new > *{
-    -webkit-transform: scale(1.70);
+.slideshow_slide > *{
+    -webkit-transform: scale(1.69, 1.75);
     -webkit-transform-origin: 0 0;
-} */
+}
 /* left side panel ends  */
 
 
