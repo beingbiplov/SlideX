@@ -1,9 +1,20 @@
-savedSlide = JSON.parse(localStorage.getItem('slideData'))
+let savedSlide
+
+getSlides().then(data => {
+   slide_r = data[data.length-1]
+
+   getSlide(slide_r.id).then(data =>{
+        savedSlide = data
+        if (savedSlide && savedSlide.slideData.length >= 1) {
+            loadSlideData(savedSlide)
+        }
+   })
+
+}).catch(err => {
+    console.log(err);
+})
 
 const slide1 = new slide(workspace, previewWindow)
-if (savedSlide && savedSlide.slideData.length >= 1) {
-    loadSlideData(savedSlide)
-}
 
 
 function loadSlideData(savedSlide) {

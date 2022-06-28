@@ -256,7 +256,8 @@ class slide{
 }
 
 
+
 saveBtn.addEventListener('click', ()=>{
-    console.log(slide1.getSlidesData())
-    localStorage.setItem('slideData', JSON.stringify(slide1.getSlidesData()));
+    let data = slide1.getSlidesData()
+    saveSlideData(data)
 })
