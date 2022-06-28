@@ -1,7 +1,9 @@
 
 class textBox{
-    constructor(slide){
+    constructor(slide, textBoxList, textBoxIdx){
         this.slide = slide
+        this.textBoxList = textBoxList
+        this.textBoxIdx = textBoxIdx
         this.textboxDiv
         this.contextMenu
         this.contextMenuItem
@@ -26,7 +28,7 @@ class textBox{
         this.textboxDiv.style.top = toPx(this.bodyPosition['top'])
         this.textboxDiv.style.left = toPx(this.bodyPosition['left'])
         
-        handlecloseBtnDisplay(this.textboxDiv, this.bodyCloseBtn)
+        handlecloseBtnDisplay(this.textboxDiv, this.bodyCloseBtn, this.textBoxList, this.textBoxIdx)
 
         this.bodyTextArea.addEventListener('change', function(){
             this.textAreaContent = this.bodyTextArea.value
@@ -119,13 +121,14 @@ class textBox{
                 'italic': this.textItalic,
                 'fontSize': this.fontSize,
                 'fontFamily': this.textFont,
-                'underline': this.textUnderline
+                'underline': this.textUnderline,
+                'fontColor' : this.fontColor
             },
-            'position' :position,
-            'content' : this.textAreaContent,
+            'position' :this.bodyPosition,
+            'content' : this.bodyTextArea.value,
             'dimension': {
-                'height' : this.textboxDiv.offsetHeight,
-                'width' : this.textboxDiv.offsetWidth
+                'height' : this.bodyTextArea.offsetHeight,
+                'width' : this.bodyTextArea.offsetWidth
             }
         }
         return(data)

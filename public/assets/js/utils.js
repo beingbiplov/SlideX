@@ -147,6 +147,7 @@ let createlinkDiv = (slide, linkText, linkUrl) => {
     linkDiv.classList.add('linkDiv')
     linkDiv.style.position = 'absolute'
     linkDiv.style.padding = '10px'
+    linkDiv.style.display = 'inline-block'
     slide.appendChild(linkDiv)
 
     const linkCloseBtnDiv = document.createElement('div')
@@ -181,7 +182,8 @@ let createlinkDiv = (slide, linkText, linkUrl) => {
 
 
 // handle close button events
-function handlecloseBtnDisplay(elementDiv, btn){
+function handlecloseBtnDisplay(elementDiv, btn, classList, listIdx){
+    
     elementDiv.addEventListener('mouseover', ()=>{
         btn.style.display = 'block'
     })
@@ -191,6 +193,10 @@ function handlecloseBtnDisplay(elementDiv, btn){
 
     btn.addEventListener('click', function(){
         this.closeBtnAction(elementDiv)
+        if (classList){
+            classList.splice(listIdx, 1)
+        }
+        
     }.bind(this))
 }
 

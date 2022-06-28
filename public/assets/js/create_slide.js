@@ -1,11 +1,13 @@
 
 class CreateSlide{
-    constructor(workspace, slideCls, previewWindow, themeIdx){
+    constructor(workspace, slideCls, previewWindow, themeIdx, slideListIdx){
         this.newSlideDiv
         this.slideCls = slideCls
         this.workspace = workspace
         this.newPreview
         this.previewWindow = previewWindow
+        this.previewSN
+        this.slideListIdx = slideListIdx
         this.previewSectionWin
         this.textBoxList = []
         this.imageList = []
@@ -24,7 +26,7 @@ class CreateSlide{
         this.headingTextAreaTypography = {
             'bold': false,
             'italic': false,
-            'fontSize': 32,
+            'fontSize': 48,
             'fontFamily': 'Roboto',
             'underline': false,
             'fontColor' : '#000000'
@@ -53,7 +55,7 @@ class CreateSlide{
         this.newSlideDiv = document.createElement('div')
         this.newSlideDiv.classList.add('content_section__main--slide', 'active')
         this.workspace.appendChild(this.newSlideDiv)
-
+        
         let createdLayouts = createLayoutStructure(this.newSlideDiv)
         this.heading1 = createdLayouts[0]
         this.body1 = createdLayouts[1]
@@ -90,11 +92,11 @@ class CreateSlide{
         this.newPreview = document.createElement('div')
         this.newPreview.classList.add('slide_preview')
         this.previewWindow.appendChild(this.newPreview)
-
-        const previewSN = document.createElement('div')
-        previewSN.classList.add('preview_section__sn')
-        previewSN.innerHTML = `${this.slideCls.length+1}`
-        this.newPreview.appendChild(previewSN)
+        
+        this.previewSN = document.createElement('div')
+        this.previewSN.classList.add('preview_section__sn')
+        this.previewSN.innerHTML = `${this.slideListIdx+1}`
+        this.newPreview.appendChild(this.previewSN)
 
         const previewBox = document.createElement('div')
         previewBox.classList.add('preview_section__box')
@@ -116,6 +118,7 @@ class CreateSlide{
     }
 
     updatePreviewWindow(slide) {
+        this.previewSN.innerHTML = `${this.slideListIdx+1}`
         this.previewSectionWin.innerHTML = ''
         this.newSLideClone = slide.cloneNode(true)
         this.newSLideClone.classList.add('preview_section__window--slide')
@@ -143,7 +146,7 @@ class CreateSlide{
     }
 
     addTextBoxToSlide(){
-        let textboxCls = new textBox(this.newSlideDiv)
+        let textboxCls = new textBox(this.newSlideDiv, this.textBoxList, this.textBoxList.length)
         let bodyTextArea = textboxCls.create()
         this.updatePreviewWindow(this.newSlideDiv)
         this.textBoxList.push(textboxCls)
@@ -171,7 +174,7 @@ class CreateSlide{
             handleFontFamily('Arial', fontSelector)
             handleFontSizeInputValue("#000000", colorPicker)
         })
-        
+        return textboxCls
     }
 
     changeFontWeight(){
@@ -211,14 +214,17 @@ class CreateSlide{
     }
 
     addImageToSlide(img_url){
-        let imageDiv = new slideImage(this.newSlideDiv, img_url)
+        let imageDiv = new slideImage(this.newSlideDiv, img_url, this.imageList, this.imageList.length)
         this.imageList.push(imageDiv)
         this.updatePreviewWindow(this.newSlideDiv)
+
+        return imageDiv
     }
 
     addLinkToSlide(linkText, linkUrl){
-        let linkDiv = new slideLink(this.newSlideDiv, linkText, linkUrl)
+        let linkDiv = new slideLink(this.newSlideDiv, linkText, linkUrl, this.linkList, this.linkList.length)
         this.linkList.push(linkDiv)
+        return linkDiv
     }
 
     addListToSlide(listType){
@@ -300,7 +306,6 @@ class CreateSlide{
         let typography = this.getTypography(activeTextarea)
         
         if (typography['underline']){
-            console.log('und')
             activeTextarea.style.textDecoration = 'none'
             typography['underline'] = false
             handleTypographyIconBG(typography['underline'], underlineTextBtn)
@@ -341,25 +346,25 @@ class CreateSlide{
             'layout' :{
                 'active' : this.activeLayout,
                 'headingDiv': {
-                        'height': this.heading1.offsetHeight,
-                        'weight': this.heading1.offsetWidth,
-                        'top': this.heading1.offsetWidth,
+                        'height': this.headingTextArea.offsetHeight,
+                        'width': this.headingTextArea.offsetWidth,
+                        'top': this.heading1.offsetTop,
                         'left': this.heading1.offsetLeft,
                         'content': this.headingTextArea.value,
                         'typography' : this.headingTextAreaTypography
                     },
                 'body1Div': {
-                        'height': this.body1.offsetHeight,
-                        'weight': this.body1.offsetWidth,
-                        'top': this.body1.offsetWidth,
+                        'height': this.bodyTextArea.offsetHeight,
+                        'width': this.bodyTextArea.offsetWidth,
+                        'top': this.body1.offsetTop,
                         'left': this.body1.offsetLeft,
                         'content': this.bodyTextArea.value,
                         'typography' : this.bodyTextAreaTypography
                     },
                 'body2Div': {
-                        'height': this.body2.offsetHeight,
-                        'weight': this.body2.offsetWidth,
-                        'top': this.body2.offsetWidth,
+                        'height': this.body2TextArea.offsetHeight,
+                        'width': this.body2TextArea.offsetWidth,
+                        'top': this.body2.offsetTop,
                         'left': this.body2.offsetLeft,
                         'content': this.body2TextArea.value,
                         'typography' : this.body2TextAreaTypography

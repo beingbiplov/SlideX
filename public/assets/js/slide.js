@@ -18,8 +18,14 @@ class slide{
         imageUploadNavBtn.style.display = 'block'
         addLinkDiv.style.display = 'block'
         addTextBoxDiv.style.display = 'block'
-
-        let newSlidecls = new CreateSlide(this.workspace, this.slideCls, this.previewWindow, this.activeThemeIdx)
+        
+        let newSlidecls = new CreateSlide(
+                this.workspace, 
+                this.slideCls, 
+                this.previewWindow, 
+                this.activeThemeIdx,
+                this.slideCls.length,
+            )
         this.newSlideDiv = newSlidecls.create()
         this.slideCls.push(newSlidecls)
         this.updatePreviewWindow = newSlidecls.updatePreviewWindow
@@ -74,6 +80,12 @@ class slide{
         }
         if (index > -1) {
             this.slideCls.splice(index, 1); 
+        }
+
+        // update preview window sn
+        for (let slideClass of this.slideCls){
+            slideClass.slideListIdx = this.slideCls.indexOf(slideClass)
+            slideClass.updatePreviewWindow(slideClass.newSlideDiv)
         }
         
         if (this.slideCls.length <= 0){
@@ -224,11 +236,18 @@ class slide{
     getSlidesData(){
         let slideData = []
         for (let slide of this.slideCls){
-            slideData.push(slide.getSlideData())
+            if (this.activeSlideCls != slide){
+                slide.newSlideDiv.style.display = 'block'
+                slideData.push(slide.getSlideData())
+                slide.newSlideDiv.style.display = 'none'
+            }else{
+                slideData.push(slide.getSlideData())
+            }
         }
 
         let data ={
             'slideData' : slideData,
+            'theme': this.activeThemeIdx
         }
 
         return data
@@ -237,4 +256,7 @@ class slide{
 }
 
 
-const slide1 = new slide(workspace, previewWindow)
+saveBtn.addEventListener('click', ()=>{
+    console.log(slide1.getSlidesData())
+    localStorage.setItem('slideData', JSON.stringify(slide1.getSlidesData()));
+})

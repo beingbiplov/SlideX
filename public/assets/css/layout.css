@@ -48,6 +48,14 @@ body {
     margin-bottom: 5px;
 }
 
+.top_nav__right{
+    display: flex;
+}
+
+#save_btn{
+    margin-right: 5px;
+}
+
 /* header section ends  */
 
 /* main content section starts  */

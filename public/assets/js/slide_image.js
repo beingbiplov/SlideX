@@ -1,9 +1,11 @@
 
 class slideImage{
-    constructor(slide, imgUrl){
+    constructor(slide, imgUrl, imageList, listIdx){
         this.slide = slide
         this.imageDiv
         this.imgUrl = imgUrl
+        this.imageList = imageList
+        this.listIdx = listIdx
         this.imageDivImg
         this.imgCloseBtn
         this.imageInnerDiv
@@ -21,7 +23,7 @@ class slideImage{
         this.imageDiv.style.top = toPx(this.bodyPosition['top'])
         this.imageDiv.style.left = toPx(this.bodyPosition['left'])
 
-        handlecloseBtnDisplay(this.imageDiv, this.imgCloseBtn)
+        handlecloseBtnDisplay(this.imageDiv, this.imgCloseBtn, this.imageList, this.listIdx)
         this.getData()
         this.handleImageDrag()
         return this.imageDiv
@@ -37,8 +39,8 @@ class slideImage{
             'position' :position,
             'imgURL': this.imgUrl,
             'dimension': {
-                'height' : this.imageDiv.offsetHeight,
-                'width' : this.imageDiv.offsetWidth
+                'height' : this.imageInnerDiv.offsetHeight,
+                'width' : this.imageInnerDiv.offsetWidth
             }
         }
         return(data)

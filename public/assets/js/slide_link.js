@@ -1,10 +1,12 @@
 
 class slideLink{
-    constructor(slide, urlText, urlLink){
+    constructor(slide, urlText, urlLink, linkList, listIdx){
         this.slide = slide
         this.linkDiv
         this.urlLink = urlLink
         this.urlText = urlText
+        this.linkList = linkList,
+        this.listIdx = listIdx
         this.linkCloseBtnDiv
         this.bodyPosition = {
             'top' : getRandomInt(10,30),
@@ -20,7 +22,7 @@ class slideLink{
         this.linkDiv.style.top = toPx(this.bodyPosition['top'])
         this.linkDiv.style.left = toPx(this.bodyPosition['left'])
 
-        handlecloseBtnDisplay(this.linkDiv, this.linkCloseBtnDiv)
+        handlecloseBtnDisplay(this.linkDiv, this.linkCloseBtnDiv, this.linkList, this.listIdx)
         this.handleLinkDrag()
         this.getData()
         return this.linkDiv
