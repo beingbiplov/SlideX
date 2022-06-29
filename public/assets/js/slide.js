@@ -48,6 +48,7 @@ class slide{
             this.activeSlideCls = slideCls
             this.activeSlideCls.newSlideDiv.style.display = 'block'
         }
+        newRightPanel.sNotesTextArea.value = this.activeSlideCls.slideNotes
     }
 
     removePreviewWindow(){
@@ -89,6 +90,7 @@ class slide{
         }
         
         if (this.slideCls.length <= 0){
+            newRightPanel.selectActiveRightPanel('layout')
             slidePlaceholder.style.display = 'flex'
             imageUploadNavBtn.style.display = 'none'
         }

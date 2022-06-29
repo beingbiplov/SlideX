@@ -76,6 +76,13 @@ bottomNavLayoutSelBtn.addEventListener('click', ()=>{
     }
 })
 
+bottomNavNoteSelBtn.addEventListener('click', ()=>{
+    if (newRightPanel && slide1.activeSlideCls){
+        newRightPanel.sNotesTextArea.value = slide1.activeSlideCls.slideNotes
+        newRightPanel.selectActiveRightPanel('speakerNote')
+    }
+})
+
 // present slideshow btn event listener
 presentSlideshowBtn.addEventListener('click', ()=>{
     if (slide1.activeSlideCls){

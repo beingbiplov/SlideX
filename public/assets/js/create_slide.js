@@ -30,7 +30,7 @@ class CreateSlide{
             'fontFamily': 'Roboto',
             'underline': false,
             'fontColor' : '#000000',
-            'bgColor': '00FFFFFF'
+            'bgColor': '#00FFFFFF'
         }
         this.bodyTextAreaTypography = {
             'bold': false,
@@ -39,7 +39,7 @@ class CreateSlide{
             'fontFamily': 'Roboto',
             'underline': false,
             'fontColor' : '#000000',
-            'bgColor': '00FFFFFF'
+            'bgColor': '#00FFFFFF'
         }
         this.body2TextAreaTypography = {
             'bold': false,
@@ -52,6 +52,7 @@ class CreateSlide{
         }
         this.activeLayout,
         this.activeThemeIdx = themeIdx
+        this.slideNotes = ''
     }
 
     create(){
@@ -364,6 +365,7 @@ class CreateSlide{
             'image' : [],
             'link': [],
             'list' : [],
+            'slideNotes' : this.slideNotes,
             'layout' :{
                 'active' : this.activeLayout,
                 'headingDiv': {

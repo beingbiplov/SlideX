@@ -24,6 +24,7 @@ const addLinkDiv = document.getElementById('add_link_btn')
 const addTextBoxDiv = document.getElementById('add_textbox_btn')
 const bottomNavThemeSelBtn = document.getElementById('bottom_nav_theme_select_btn')
 const bottomNavLayoutSelBtn = document.getElementById('bottom_nav_layout_select_btn')
+const bottomNavNoteSelBtn = document.getElementById('bottom_nav_note_select_btn')
 
 const slideShowDiv = document.getElementById('slideshow')
 const presentSlideshowBtn = document.getElementById('present_slideshow_btn')

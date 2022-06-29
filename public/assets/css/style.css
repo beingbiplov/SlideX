@@ -167,6 +167,7 @@
 
 .bottom_nav__left--text {
     font-size: 0.8rem;
+    cursor: pointer;
 }
 
 #slide_img_upload_nav_btn{

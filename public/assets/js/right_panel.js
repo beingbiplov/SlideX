@@ -6,11 +6,14 @@ class rightPanel{
         this.windowHeight = 85
         this.windowWidth = 100
         this.linkPanel
+        this.speakerNotePanel
+        this.sNotesTextArea
         this.rightPanelList = {}
 
         this.createThemePanel()
         this.createLinkPanel()
         this.createLayoutPanel()
+        this.createSpeakerNotePanel()
         this.selectActiveRightPanel('themes')
     }
 
@@ -126,6 +129,51 @@ class rightPanel{
         }
 
         this.rightPanelList['layout'] = this.layoutPanel
+    }
+
+    createSpeakerNotePanel(){
+        let height = '35'
+
+        this.speakerNotePanel = document.createElement('div')
+        this.speakerNotePanel.style.width = '80%'
+        this.speakerNotePanel.style.height = '100%'
+        this.speakerNotePanel.style.margin = '0 auto'
+        this.rightPanelDiv.appendChild(this.speakerNotePanel)
+
+        let speakerNoteHeading = document.createElement('div')
+        speakerNoteHeading.classList.add('theme_sec_heading')
+        speakerNoteHeading.innerText = 'Notes'
+        this.speakerNotePanel.appendChild(speakerNoteHeading)
+
+        const bodyDiv = document.createElement('div')
+        bodyDiv.style.boxSizing = 'border-box'
+        bodyDiv.style.display = 'inline-block'
+        bodyDiv.style.width = '100%'
+        bodyDiv.style.height = '70%'
+        bodyDiv.style.maxHeight = '80%'
+
+        this.speakerNotePanel.appendChild(bodyDiv)
+
+        this.sNotesTextArea = document.createElement('textarea')
+        this.sNotesTextArea.style.height = toPer('100')
+        this.sNotesTextArea.style.width = `100%`
+        this.sNotesTextArea.style.height = '100%'
+        this.sNotesTextArea.classList.add('textareaBody')
+        this.sNotesTextArea.setAttribute('placeholder', 'Notes')
+        this.sNotesTextArea.style.resize = 'none'
+        this.sNotesTextArea.style.backgroundColor = '#e7f2fd'
+        this.sNotesTextArea.style.fontSize = '1.2em'
+
+        this.sNotesTextArea.addEventListener('change', function(){
+            if (slide1.activeSlideCls){
+                slide1.activeSlideCls.slideNotes = this.sNotesTextArea.value
+            }
+        }.bind(this))
+
+        bodyDiv.appendChild(this.sNotesTextArea)
+        
+        this.rightPanelList['speakerNote'] = this.speakerNotePanel
+
     }
 }
 

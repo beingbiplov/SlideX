@@ -25,21 +25,23 @@ function loadSlideData(savedSlide) {
         let links = slide.link
         let lists = slide.list
         let layouts = slide.layout
-        createSlidesFromData(textboxes, images, links, lists, layouts, themeIdx)
+        let slideNote = slide.slideNotes
+        createSlidesFromData(textboxes, images, links, lists, layouts, slideNote)
     }
     slide1.selectTheme(themeIdx)
 }
 
 
-function createSlidesFromData(textboxes, images, links, lists, layout) {
+function createSlidesFromData(textboxes, images, links, lists, layout, slideNote) {
     createSavedSlide()
     createSavedLayouts(layout)
     createSavedTextBox(textboxes)
     createSavedLinks(links)
     createSavedImage(images)
+    addSlideNote(slideNote)
 }
 
-function createSavedSlide(themeIdx) {
+function createSavedSlide() {
     slide1.newSlide()
 }
 
@@ -160,4 +162,8 @@ function createSavedImage(images){
         imageClass.bodyPosition['top'] = image.position.top
         imageClass.bodyPosition['left'] = image.position.left
     }
+}
+
+function addSlideNote(note){
+    slide1.activeSlideCls.slideNotes = note
 }
