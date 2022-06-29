@@ -19,6 +19,8 @@ const slide1 = new slide(workspace, previewWindow)
 
 function loadSlideData(savedSlide) {
     let themeIdx = savedSlide.theme
+    slide1.transition = savedSlide.transition
+    
     for (let slide of savedSlide.slideData) {
         let textboxes = slide.textbox
         let images = slide.image

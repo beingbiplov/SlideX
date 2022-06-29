@@ -11,6 +11,7 @@ class slide{
         this.activeSlideCls
         this.activeLayoutTextarea
         this.activeThemeIdx = 0
+        this.transition
     }
 
     newSlide(){
@@ -124,7 +125,7 @@ class slide{
     }
 
     slideShow(){
-        presentSlides(this.slideCls)
+        presentSlides(this.slideCls, this.transition)
     }
 
     handleFontWeight(){
@@ -264,7 +265,8 @@ class slide{
 
         let data ={
             'slideData' : slideData,
-            'theme': this.activeThemeIdx
+            'theme': this.activeThemeIdx,
+            'transition': this.transition
         }
 
         return data

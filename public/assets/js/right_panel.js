@@ -8,12 +8,15 @@ class rightPanel{
         this.linkPanel
         this.speakerNotePanel
         this.sNotesTextArea
+        this.transitionPanel
+        this.transitionSelect
         this.rightPanelList = {}
 
         this.createThemePanel()
         this.createLinkPanel()
         this.createLayoutPanel()
         this.createSpeakerNotePanel()
+        this.rightTransitionPanel()
         this.selectActiveRightPanel('themes')
     }
 
@@ -173,7 +176,37 @@ class rightPanel{
         bodyDiv.appendChild(this.sNotesTextArea)
         
         this.rightPanelList['speakerNote'] = this.speakerNotePanel
+    }
 
+    rightTransitionPanel(){
+        this.transitionPanel = document.createElement('div')
+        this.transitionPanel.style.width = '100%'
+        this.rightPanelDiv.appendChild(this.transitionPanel)
+
+        let layoutHeading = document.createElement('div')
+        layoutHeading.classList.add('theme_sec_heading')
+        layoutHeading.innerText = 'Transitions'
+        this.transitionPanel.appendChild(layoutHeading)
+
+        this.transitionSelect = document.createElement('select')
+        this.transitionSelect.id = 'slide_transition'
+        this.transitionSelect.setAttribute('name', 'transitions')
+        this.rightPanelDiv.appendChild(this.transitionSelect)
+        
+        for (let transition of transitionList){
+            let transitionOption = document.createElement('option')
+            transitionOption.value = transition
+            transitionOption.innerHTML = transition
+            this.transitionSelect.appendChild(transitionOption)
+        }
+
+        this.transitionSelect.addEventListener('change', function(){
+            if (slide1.activeSlideCls){
+                slide1.transition = this.transitionSelect.value
+            }
+        }.bind(this))
+
+        this.rightPanelList['transition'] = this.transitionPanel
     }
 }
 

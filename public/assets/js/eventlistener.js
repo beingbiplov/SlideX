@@ -83,6 +83,15 @@ bottomNavNoteSelBtn.addEventListener('click', ()=>{
     }
 })
 
+bottomNavTransitionSelBtn.addEventListener('click', ()=>{
+    if (newRightPanel && slide1.activeSlideCls){
+        if (slide1.transition){
+            newRightPanel.transitionSelect.value = slide1.transition
+        }
+        newRightPanel.selectActiveRightPanel('transition')
+    }
+})
+
 // present slideshow btn event listener
 presentSlideshowBtn.addEventListener('click', ()=>{
     if (slide1.activeSlideCls){

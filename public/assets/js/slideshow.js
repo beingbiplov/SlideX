@@ -1,5 +1,5 @@
 
-function presentSlides(slideCls){
+function presentSlides(slideCls, transition){
     let slides = []
     let slideIdx = 0
 
@@ -31,8 +31,15 @@ function presentSlides(slideCls){
 
         }
 
-        easeInOut(slideShow_slide)
-        // FadeInOut()
+        if (!transition){
+            easeInOut(slideShow_slide)
+        }
+        else if(transition == transitionList[0]){
+            easeInOut(slideShow_slide)
+        }
+        else if(transition == transitionList[1]){
+            FadeInOut()
+        }
         
     }
 

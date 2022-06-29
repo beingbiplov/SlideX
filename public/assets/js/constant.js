@@ -10,6 +10,7 @@ const selLayoutBtn = document.getElementsByClassName('sel_layout--btn')
 const selThemeBth = document.getElementsByClassName('sel_theme--btn')
 
 const themeList = ['network_pattern', 'green_pattern', 'pink_patterns', 'blue_bg',  'simple_dark', 'red_blue', 'vertical_red_teal', 'streamline', 'beach_day', 'blue_horizon']
+const transitionList = ['Slide', 'Fade']
 
 const addTextBoxBtn = document.getElementById('add_textbox')
 
@@ -25,6 +26,7 @@ const addTextBoxDiv = document.getElementById('add_textbox_btn')
 const bottomNavThemeSelBtn = document.getElementById('bottom_nav_theme_select_btn')
 const bottomNavLayoutSelBtn = document.getElementById('bottom_nav_layout_select_btn')
 const bottomNavNoteSelBtn = document.getElementById('bottom_nav_note_select_btn')
+const bottomNavTransitionSelBtn = document.getElementById('bottom_nav_transition_select_btn')
 
 const slideShowDiv = document.getElementById('slideshow')
 const presentSlideshowBtn = document.getElementById('present_slideshow_btn')

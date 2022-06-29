@@ -186,6 +186,15 @@ body {
     cursor: pointer;
 }
 
+#slide_transition{
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    height: 30px;
+    font-size: 1em;
+    border-radius: 8px;
+}
+
 /* right panle ends  */
 
 /* url panle section  */
