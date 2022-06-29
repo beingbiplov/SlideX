@@ -36,5 +36,6 @@ const italicTextBtn = document.getElementById('italic_text_btn')
 const underlineTextBtn = document.getElementById('underline_text_btn')
 const fontSelector = document.getElementById('slide_text_font')
 const colorPicker = document.getElementById('colorpicker')
+const bgColorPicker = document.getElementById('bg_colorpicker')
 
 const saveBtn = document.getElementById('save_btn')

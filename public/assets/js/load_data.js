@@ -57,6 +57,7 @@ function addTypography(element, typography){
     element.style.fontFamily = typography.fontFamily
 
     element.style.color = typography.fontColor
+    element.style.backgroundColor = typography.bgColor
 
     let fontSizeVal = typography.fontSize
     if (fontSizeVal > 5 && fontSizeVal <= 96){
@@ -125,6 +126,7 @@ function createSavedTextBox(textBoxes){
         textBoxClass.fontSize = textbox.typography.fontSize
         textBoxClass.textFont = textbox.typography.fontFamily
         textBoxClass.fontColor = textbox.typography.fontColor
+        textBoxClass.bgColor = textbox.typography.bgColor
         textBoxClass.bodyPosition['top'] = textbox.position.top
         textBoxClass.bodyPosition['left'] = textbox.position.left
     }

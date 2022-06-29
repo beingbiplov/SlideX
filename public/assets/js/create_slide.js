@@ -29,7 +29,8 @@ class CreateSlide{
             'fontSize': 48,
             'fontFamily': 'Roboto',
             'underline': false,
-            'fontColor' : '#000000'
+            'fontColor' : '#000000',
+            'bgColor': '00FFFFFF'
         }
         this.bodyTextAreaTypography = {
             'bold': false,
@@ -37,7 +38,8 @@ class CreateSlide{
             'fontSize': 32,
             'fontFamily': 'Roboto',
             'underline': false,
-            'fontColor' : '#000000'
+            'fontColor' : '#000000',
+            'bgColor': '00FFFFFF'
         }
         this.body2TextAreaTypography = {
             'bold': false,
@@ -45,7 +47,8 @@ class CreateSlide{
             'fontSize': 32,
             'fontFamily': 'Roboto',
             'underline': false,
-            'fontColor' : '#000000'
+            'fontColor' : '#000000',
+            'bgColor': '00FFFFFF'
         }
         this.activeLayout,
         this.activeThemeIdx = themeIdx
@@ -159,6 +162,7 @@ class CreateSlide{
             handleTypographyIconBG(textboxCls.textUnderline, underlineTextBtn)
             handleFontFamily(textboxCls.textFont, fontSelector)
             handleFontSizeInputValue(textboxCls.fontColor, colorPicker)
+            handleFontSizeInputValue(textboxCls.bgColor, bgColorPicker)
         })
 
         bodyTextArea.addEventListener('click', (e)=>{
@@ -173,6 +177,7 @@ class CreateSlide{
             handleTypographyIconBG(false, underlineTextBtn)
             handleFontFamily('Arial', fontSelector)
             handleFontSizeInputValue("#000000", colorPicker)
+            handleFontSizeInputValue("#000000", bgColorPicker)
         })
         return textboxCls
     }
@@ -210,6 +215,12 @@ class CreateSlide{
     changeFontColor(){
         if (this.activeTextBoxCls){
             this.activeTextBoxCls.changeFontColor()
+        }
+    }
+
+    changeBGColor(){
+        if (this.activeTextBoxCls){
+            this.activeTextBoxCls.changeBGColor()
         }
     }
 
@@ -334,6 +345,16 @@ class CreateSlide{
         if(typography['fontColor'] != selectedFontColor){
             activeTextarea.style.color = selectedFontColor
             typography['fontColor'] = selectedFontColor
+        }
+    }
+
+    changeLayoutTextareaBGColor(activeTextarea){
+        let typography = this.getTypography(activeTextarea)
+        
+        let selectedBGColor = bgColorPicker.value
+        if(typography['bgColor'] != selectedBGColor){
+            activeTextarea.style.backgroundColor = selectedBGColor
+            typography['bgColor'] = selectedBGColor
         }
     }
 

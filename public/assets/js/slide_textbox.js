@@ -15,6 +15,7 @@ class textBox{
         this.fontSize = 32
         this.textFont = 'Roboto'
         this.fontColor = "#000000"
+        this.bgColor = "#00FFFFFF"
         this.bodyPosition = {
             'top' :getRandomInt(200,300),
             'left': getRandomInt(10,50)
@@ -113,6 +114,13 @@ class textBox{
         handleFontSizeInputValue(this.fontColor, colorPicker)
     }
 
+    changeBGColor(){
+        let bgColorVal = bgColorPicker.value
+        this.bodyTextArea.style.backgroundColor = bgColorVal
+        this.bgColor = bgColorVal
+        handleFontSizeInputValue(this.bgColor, bgColorPicker)
+    }
+
     getData(){
         let position = this.bodyPosition
         let data = {
@@ -122,7 +130,8 @@ class textBox{
                 'fontSize': this.fontSize,
                 'fontFamily': this.textFont,
                 'underline': this.textUnderline,
-                'fontColor' : this.fontColor
+                'fontColor' : this.fontColor,
+                'bgColor': this.bgColor
             },
             'position' :this.bodyPosition,
             'content' : this.bodyTextArea.value,

@@ -149,3 +149,13 @@ colorPicker.addEventListener('input', (e) =>{
         slide1.handleFontColor()
     }
 })
+
+bgColorPicker.addEventListener('click', (e) =>{
+        e.stopPropagation()
+})
+
+bgColorPicker.addEventListener('input', (e) =>{
+    if (slide1.activeSlideCls){
+        slide1.handleBGColor()
+    }
+})

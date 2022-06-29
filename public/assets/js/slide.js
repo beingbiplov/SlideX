@@ -170,6 +170,14 @@ class slide{
         }
     }
 
+    handleBGColor(){
+        if (this.activeLayoutTextarea){
+            this.activeSlideCls.changeLayoutTextareaBGColor(this.activeLayoutTextarea)
+        }else{
+            this.activeSlideCls.changeBGColor()
+        }
+    }
+
     handleActiveSlideTextarea(newSlidecls){
         let headingTextarea = newSlidecls.headingTextArea 
         let bodyTextarea = newSlidecls.bodyTextArea
@@ -184,6 +192,7 @@ class slide{
                 handleTypographyIconBG(newSlidecls.headingTextAreaTypography['underline'], underlineTextBtn)
                 handleFontFamily(newSlidecls.headingTextAreaTypography['fontFamily'], fontSelector)
                 handleFontSizeInputValue(newSlidecls.headingTextAreaTypography['fontColor'], colorPicker)
+                handleFontSizeInputValue(newSlidecls.headingTextAreaTypography['bgColor'], bgColorPicker)
             })
 
             headingTextarea.addEventListener('click', (e)=>{
@@ -200,6 +209,7 @@ class slide{
                 handleTypographyIconBG(newSlidecls.bodyTextAreaTypography['underline'], underlineTextBtn)
                 handleFontFamily(newSlidecls.bodyTextAreaTypography['fontFamily'], fontSelector)
                 handleFontSizeInputValue(newSlidecls.bodyTextAreaTypography['fontColor'], colorPicker)
+                handleFontSizeInputValue(newSlidecls.bodyTextAreaTypography['bgColor'], bgColorPicker)
             })
 
             bodyTextarea.addEventListener('click', (e)=>{
@@ -216,6 +226,7 @@ class slide{
                 handleTypographyIconBG(newSlidecls.body2TextAreaTypography['underline'], underlineTextBtn)
                 handleFontFamily(newSlidecls.body2TextAreaTypography['fontFamily'], fontSelector)
                 handleFontSizeInputValue(newSlidecls.body2TextAreaTypography['fontColor'], colorPicker)
+                handleFontSizeInputValue(newSlidecls.body2TextAreaTypography['bgColor'], bgColorPicker) 
             })
             body2Textarea.addEventListener('click', (e)=>{
                 e.stopPropagation()
@@ -230,6 +241,7 @@ class slide{
             handleTypographyIconBG(false, underlineTextBtn)
             handleFontFamily('Arial', fontSelector)
             handleFontSizeInputValue("#000000", colorPicker)
+            handleFontSizeInputValue('#000000', bgColorPicker) 
         })
     }
     
