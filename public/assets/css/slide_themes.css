@@ -44,3 +44,24 @@
 .blue_horizon > div > .textareaHeading {
     font-family: 'Permanent Marker', cursive;
 }
+
+.network_pattern {
+    background: url('../images/network_pattern.png');
+
+}
+
+.blue_bg{
+    background: url('../images/blue_bg.jpg');
+}
+
+.pink_patterns {
+    background: url('../images/pink_patterns.jpg');
+}
+
+.red_blue {
+    background: url('../images/red_blue.jpg');
+}
+
+.green_pattern {
+    background: url('../images/green_pattern.jpg');
+}

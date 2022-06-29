@@ -22,7 +22,7 @@ function presentSlides(slideCls){
             newSlide.classList.add('fade')
             newSlide.style.flex = '0 0 100%'
             slideShow_slide.appendChild(newSlide)
-            this.newSLideClone = slideClass.newSlideDiv.cloneNode(true)
+            newSLideClone = slideClass.newSlideDiv.cloneNode(true)
             newSLideClone.style.display = 'block'
             newSLideClone.style.width = '100%'
             newSLideClone.style.height = '100%'

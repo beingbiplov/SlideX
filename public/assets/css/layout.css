@@ -172,6 +172,7 @@ body {
     box-sizing: border-box;
     border: 1px #949494 solid;
     border-radius: 4px;
+    background-size: cover !important;
 }
 
 .theme_sec_heading{

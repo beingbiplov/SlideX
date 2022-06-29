@@ -240,6 +240,7 @@
     border: 1px solid #949494;
     position: relative;
     overflow: hidden;
+    background-size: cover !important;
 }
 
 /* main content sectin ends  */
