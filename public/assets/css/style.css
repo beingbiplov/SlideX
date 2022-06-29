@@ -271,7 +271,7 @@
     overflow: hidden;
 }
 
-.preview_section__box.active {
+.slide_preview.active > .preview_section__box {
     border-color: #edad1e;
 }
 

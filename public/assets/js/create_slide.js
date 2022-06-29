@@ -57,7 +57,7 @@ class CreateSlide{
 
     create(){
         this.newSlideDiv = document.createElement('div')
-        this.newSlideDiv.classList.add('content_section__main--slide', 'active')
+        this.newSlideDiv.classList.add('content_section__main--slide')
         this.workspace.appendChild(this.newSlideDiv)
         
         let createdLayouts = createLayoutStructure(this.newSlideDiv)

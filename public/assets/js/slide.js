@@ -41,11 +41,14 @@ class slide{
     changeActiveSlide(slideCls){
         if (!this.activeSlideCls){
             this.activeSlideCls = slideCls
+            this.activeSlideCls.newPreview.classList.add('active')
             this.activeSlideCls.newSlideDiv.style.display = 'block'
         }
         else{
+            this.activeSlideCls.newPreview.classList.remove('active')
             this.activeSlideCls.newSlideDiv.style.display = 'none'
             this.activeSlideCls = slideCls
+            this.activeSlideCls.newPreview.classList.add('active')
             this.activeSlideCls.newSlideDiv.style.display = 'block'
         }
         newRightPanel.sNotesTextArea.value = this.activeSlideCls.slideNotes
