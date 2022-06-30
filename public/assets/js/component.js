@@ -48,6 +48,7 @@ const createListBox = (slide, listType) => {
     
     listItemDiv.appendChild(listItemUL)
     let listItemLI = document.createElement('li')
+    listItemLI.innerText = 'Item'
     listItemUL.appendChild(listItemLI)
 
     return [listBoxDiv, listCloseBtn, listItemDiv]
