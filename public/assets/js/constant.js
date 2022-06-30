@@ -15,6 +15,9 @@ const transitionList = ['Slide', 'Fade']
 const addTextBoxBtn = document.getElementById('add_textbox')
 
 const slide_textbox = document.getElementsByClassName('slide_textbox')
+const addNewSlideBtns = document.getElementsByClassName('add_new_slide')
+const addNewLayoutBtns = document.getElementsByClassName('add_new_layout')
+const addNewThemeBtns = document.getElementsByClassName('add_new_theme')
 
 const textbox_contextmenu = document.querySelector('.textbox_context_menu')
 

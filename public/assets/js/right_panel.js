@@ -191,7 +191,7 @@ class rightPanel{
         this.transitionSelect = document.createElement('select')
         this.transitionSelect.id = 'slide_transition'
         this.transitionSelect.setAttribute('name', 'transitions')
-        this.rightPanelDiv.appendChild(this.transitionSelect)
+        this.transitionPanel.appendChild(this.transitionSelect)
         
         for (let transition of transitionList){
             let transitionOption = document.createElement('option')

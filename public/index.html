@@ -37,7 +37,7 @@
                                 <div class="dropdown">
                                     <li class="as">File</li>
                                     <div class="dropdown-content">
-                                        <p>
+                                        <p class="add_new_slide">
                                             <a href="#">New Slide</a>
                                         </p>
                                     </div>
@@ -98,6 +98,7 @@
 
             <div class="bottom_nav">
                 <div class="bottom_nav__left">
+                    <div class="bottom_nav__left--features">
                     <div class="bottom_nav__left--icon">
                         <a id="add_new_slide_bottom_nav_btn" href="#">
                             <img class="bottom_nav__left--icon--first" src="./assets/images/plus2.png" alt="add">
@@ -105,19 +106,19 @@
                         <div class="dropdown">
                             <img class="bottom_nav__left--icon--second" src="./assets/images/down.png" alt="">
                             <div class="bottom_nav__dropdown-content">
-                                <p>
+                                <p class="add_new_slide">
                                     <a href="#">Add new slide</a>
                                 </p>
-                                <p>
+                                <p class = "add_new_theme">
                                     <a href="#">Select Theme</a>
                                 </p>
-                                <p>
+                                <p class="add_new_layout">
                                     <a href="#">Select Layout</a>
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="bottom_nav__left--icon">
+                    <!-- <div class="bottom_nav__left--icon">
                         <a href="#">
                             <img class="bottom_nav__left--icon--first" src="./assets/images/undo.png" alt="add">
                         </a>
@@ -153,15 +154,10 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div id="bottom_nav_transition_select_btn" class="bottom_nav__left--icon">
-                        <a href="#">
-                            <img class="bottom_nav__left--icon--first" src="./assets/images/transition.png" alt="transitions">
-                        </a>
-                    </div>
-                    <div class="bottom_nav--vline">
+                    </div> -->
+                    <!-- <div class="bottom_nav--vline">
                         <img src="./assets/images/vert_line.png" alt="add">
-                    </div>
+                    </div> -->
                     <div id="add_textbox_btn" class="bottom_nav__left--icon">
                         <a id="add_textbox" href="#">
                             <img class="bottom_nav__left--icon--first" src="./assets/images/textbox.png" alt="add">
@@ -176,6 +172,11 @@
                     <div id="add_link_btn" class="bottom_nav__left--icon">
                         <a id="add_link" href="#">
                             <img class="bottom_nav__left--icon--first" src="./assets/images/link.png" alt="add link">
+                        </a>
+                    </div>
+                    <div id="bottom_nav_transition_select_btn" class="bottom_nav__left--icon">
+                        <a href="#">
+                            <img class="bottom_nav__left--icon--first" src="./assets/images/transition.png" alt="transitions">
                         </a>
                     </div>
 
@@ -229,7 +230,8 @@
                     <div class="bottom_nav--vline">
                         <img src="./assets/images/vert_line.png" alt="add">
                     </div>
-
+                </div>
+                <div class="bottom_nav__left--typography">
                     <div id="fontsize_text_btn" class="bottom_nav__left--icon">
                         <input type="color" id="colorpicker" value="#000000">
                     </div>
@@ -282,7 +284,7 @@
                             <img class="bottom_nav__left--icon--first" src="./assets/images/number_list.png" alt="add link">
                         </a>
                     </div>
-
+                </div>
                 </div>
 
                 <div class="bottom_nav__right">
@@ -332,6 +334,7 @@
                     <!-- context menu right click  -->
                     <div class="slide_context_menu">
                         <div id="slide_context_menu--del" class="slide_context_menu__item">Delete Slide</div>
+                        <div class="slide_context_menu__item add_new_slide">Add new Slide</div>
                     </div>
 
                 </div>

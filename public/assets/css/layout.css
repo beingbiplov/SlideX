@@ -43,9 +43,6 @@ body {
 }
 .bottom_nav__left {
     display: flex;
-    padding: 0 5px;
-    align-items: center;
-    margin-bottom: 5px;
 }
 
 .top_nav__right{
@@ -56,6 +53,18 @@ body {
     margin-right: 5px;
 }
 
+.bottom_nav__left--typography{
+    display: flex;
+    padding: 0 5px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.bottom_nav__left--features{
+    display: flex;
+    padding: 0 5px;
+    align-items: center;
+    margin-bottom: 5px;
+}
 /* header section ends  */
 
 /* main content section starts  */

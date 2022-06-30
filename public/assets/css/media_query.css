@@ -36,3 +36,41 @@
         padding-right: 1%;
     }
 }
+
+@media (max-width:1000px) {
+    .bottom_nav__left {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width:756px) {
+    .bottom_nav {
+        display: none;
+    }
+    .content_section__left{
+        display: none;
+    }
+    .content_section__right{
+        display: none;
+    }
+    .content_section__main{
+        width: 100%;
+        pointer-events: none;
+    }
+    .top_nav__left{
+        display: none;
+    }
+    .top_nav {
+        display: flex;
+        align-items: center;
+        height: 80px;
+    }
+    #save_btn{
+        display: none;
+    }
+
+    .icon{
+        margin-right: 16px;
+    }
+}

@@ -42,6 +42,11 @@ newSlideBtn.addEventListener('click', ()=>{
     slide1.newSlide()
 })
 
+for (let btn of addNewSlideBtns){
+    btn.addEventListener('click', ()=>{   
+        slide1.newSlide()
+    })
+}
 
 // handle add new slide btn 
 addNewSlideBtn.addEventListener('click', () =>{
@@ -69,12 +74,28 @@ bottomNavThemeSelBtn.addEventListener('click', ()=>{
     }
 })
 
+for (let btn of addNewThemeBtns){
+    btn.addEventListener('click', ()=>{   
+       if (newRightPanel){
+            newRightPanel.selectActiveRightPanel('themes')
+      }
+    })
+}
+
 // layout selector panel toggle event listener
 bottomNavLayoutSelBtn.addEventListener('click', ()=>{
     if (newRightPanel){
         newRightPanel.selectActiveRightPanel('layout')
     }
 })
+
+for (let btn of addNewLayoutBtns){
+    btn.addEventListener('click', ()=>{   
+       if (newRightPanel){
+         newRightPanel.selectActiveRightPanel('layout')
+      }
+    })
+}
 
 bottomNavNoteSelBtn.addEventListener('click', ()=>{
     if (newRightPanel && slide1.activeSlideCls){

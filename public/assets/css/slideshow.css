@@ -24,9 +24,9 @@
 
 .fade {
     -webkit-animation-name: fade-image;
-    -webkit-animation-duration: 2s;
+    -webkit-animation-duration: 4s;
     animation-name: fade-image;
-    animation-duration: 2s;
+    animation-duration: 4s;
 }
 
 @-webkit-keyframes fade-image {
