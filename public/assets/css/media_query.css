@@ -37,10 +37,14 @@
     }
 }
 
-@media (max-width:1000px) {
+@media (max-width:1200px) {
     .bottom_nav__left {
         display: flex;
         flex-direction: column;
+    }
+    .slideshow_slide>* {
+        -webkit-transform: scale(1, 1.5);
+        -webkit-transform-origin: 0 0;
     }
 }
 

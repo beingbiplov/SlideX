@@ -40,15 +40,18 @@
                                         <p class="add_new_slide">
                                             <a href="#">New Slide</a>
                                         </p>
+                                        <p class="save_slide_btn">
+                                            <a href="#">Save</a>
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="dropdown">
                                     <li class="as">Edit</li>
                                     <div class="dropdown-content">
-                                        <p>
+                                        <p class="add_new_layout">
                                             <a href="#">Layouts</a>
                                         </p>
-                                        <p>
+                                        <p class="add_new_theme">
                                             <a href="#">Themes</a>
                                         </p>
                                     </div>
@@ -56,19 +59,11 @@
                                 <div class="dropdown">
                                     <li class="as">Insert</li>
                                     <div class="dropdown-content">
-                                        <p>
+                                        <p class="add_textbox">
                                             <a href="#">Textbox</a>
                                         </p>
-                                        <p>
-                                            <a href="#">Image</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="dropdown">
-                                    <li class="as">Format</li>
-                                    <div class="dropdown-content">
-                                        <p>
-                                            <a href="#">Text</a>
+                                        <p class="add_link">
+                                            <a href="#">Link</a>
                                         </p>
                                     </div>
                                 </div>
@@ -77,7 +72,7 @@
                     </div>
 
                     <div class="top_nav__right">
-                        <div id="save_btn" class="top_nav__right--btn">
+                        <div id="save_btn" class="top_nav__right--btn save_slide_btn">
                             <a href="#" class="btn present_btn">
                                 <img src="./assets/images/save_icon.png" alt="play buttin">
                                 Save
@@ -118,58 +113,19 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="bottom_nav__left--icon">
-                        <a href="#">
-                            <img class="bottom_nav__left--icon--first" src="./assets/images/undo.png" alt="add">
-                        </a>
-                    </div>
-                    <div class="bottom_nav__left--icon">
-                        <a href="#">
-                            <img class="bottom_nav__left--icon--first" src="./assets/images/redo.png" alt="add">
-                        </a>
-                    </div>
-                    <div class="bottom_nav__left--icon">
-                        <a href="#">
-                            <img class="bottom_nav__left--icon--first" src="./assets/images/print.png" alt="add">
-                        </a>
-                    </div>
-                    <div class="bottom_nav--vline">
-                        <img class="bottom_nav__left--icon--first" src="./assets/images/vert_line.png" alt="add">
-                    </div>
-                    <div class="bottom_nav__left--icon">
-                        <a href="#">
-                            <img class="bottom_nav__left--icon--first" src="./assets/images/zoom.png" alt="add">                      
-                        </a>
-                        <div class="dropdown">
-                            <img class="bottom_nav__left--icon--second" src="./assets/images/down.png" alt="">
-                            <div class="bottom_nav__dropdown-content">
-                                <p>
-                                    <a href="#">50%</a>
-                                </p>
-                                <p>
-                                    <a href="#">100%</a>
-                                </p>
-                                <p>
-                                    <a href="#">200%</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="bottom_nav--vline">
-                        <img src="./assets/images/vert_line.png" alt="add">
-                    </div> -->
-                    <div id="add_textbox_btn" class="bottom_nav__left--icon">
+                    
+                    <div id="add_textbox_btn" class="bottom_nav__left--icon add_textbox">
                         <a id="add_textbox" href="#">
                             <img class="bottom_nav__left--icon--first" src="./assets/images/textbox.png" alt="add">
                         </a>
                     </div>
-                    <div id="slide_img_upload_nav_btn" class="bottom_nav__left--icon">
+                    <div id="slide_img_upload_nav_btn" class="bottom_nav__left--icon add_image">
                         <input type="file" accept="image/png, image/jpg" id="slide_img_input" hidden>
                         <label for="slide_img_input">
                             <img class="bottom_nav__left--icon--first" src="./assets/images/image.png" alt="add">
                         </label>
                     </div>
-                    <div id="add_link_btn" class="bottom_nav__left--icon">
+                    <div id="add_link_btn" class="bottom_nav__left--icon add_link">
                         <a id="add_link" href="#">
                             <img class="bottom_nav__left--icon--first" src="./assets/images/link.png" alt="add link">
                         </a>
@@ -184,37 +140,6 @@
                         <img src="./assets/images/vert_line.png" alt="add">
                     </div>
 
-                    <!-- <div class="bottom_nav__left--icon">
-                        <div class="dropdown">
-                            <span class="bottom_nav__left--text">Layout</span>
-                            <div class="bottom_nav__dropdown-content">
-                                <p>
-                                    <a class="sel_layout--btn" href="#">Default</a>
-                                </p>
-                                <p>
-                                    <a class="sel_layout--btn" href="#">Title Only</a>
-                                </p>
-                                <p>
-                                    <a class="sel_layout--btn" href="#">Title Body</a>
-                                </p>
-                                <p>
-                                    <a class="sel_layout--btn" href="#">Title with two cols</a>
-                                </p>
-                                <p>
-                                    <a class="sel_layout--btn" href="#">One column</a>
-                                </p>
-                                <p>
-                                    <a class="sel_layout--btn" href="#">Main point</a>
-                                </p>
-                                <p>
-                                    <a class="sel_layout--btn" href="#">Two section</a>
-                                </p>
-                                <p>
-                                    <a class="sel_layout--btn" href="#">Caption</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div> -->
                     <div id="bottom_nav_layout_select_btn" class="bottom_nav__left--icon">
                         <span class="bottom_nav__left--text">Layouts</span>
                     </div>

@@ -13,6 +13,8 @@ const themeList = ['network_pattern', 'green_pattern', 'pink_patterns', 'blue_bg
 const transitionList = ['Slide', 'Fade']
 
 const addTextBoxBtn = document.getElementById('add_textbox')
+const addTextBoxBtns = document.getElementsByClassName('add_textbox')
+const addLinkBtns = document.getElementsByClassName('add_link')
 
 const slide_textbox = document.getElementsByClassName('slide_textbox')
 const addNewSlideBtns = document.getElementsByClassName('add_new_slide')
@@ -48,3 +50,4 @@ const alignTextLeftBtn = document.getElementById('aligh_text_left_btn')
 const alignTextCenterBtn = document.getElementById('aligh_text_center_btn')
 
 const saveBtn = document.getElementById('save_btn')
+const saveSlideBtns = document.getElementsByClassName('save_slide_btn')

@@ -308,10 +308,3 @@ class slide{
     }
 
 }
-
-
-
-saveBtn.addEventListener('click', ()=>{
-    let data = slide1.getSlidesData()
-    saveSlideData(data)
-})

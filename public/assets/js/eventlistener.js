@@ -54,18 +54,22 @@ addNewSlideBtn.addEventListener('click', () =>{
 })
 
 // handle add textbox event 
-addTextBoxBtn.addEventListener('click', ()=>{
-    if (slide1.activeSlideCls){
-        slide1.addTextBox()
-    }
-})
+for (let addTextBoxBtn of addTextBoxBtns){
+    addTextBoxBtn.addEventListener('click', ()=>{
+        if (slide1.activeSlideCls){
+            slide1.addTextBox()
+        }
+    })
+}
 
 // add link panel toggle event listener
-addLinkDiv.addEventListener('click', ()=>{
+for (let addLinkDiv of addLinkBtns){
+    addLinkDiv.addEventListener('click', ()=>{
     if (newRightPanel){
         newRightPanel.selectActiveRightPanel('link')
     }
 })
+}
 
 // theme selector panel toggle event listener
 bottomNavThemeSelBtn.addEventListener('click', ()=>{
@@ -133,6 +137,14 @@ addOLBtn.addEventListener('click', ()=>{
        slide1.addList('ol')
     }
 })
+
+
+for (let btn of saveSlideBtns){
+    btn.addEventListener('click', ()=>{
+        let data = slide1.getSlidesData()
+        saveSlideData(data)
+    })
+}
 
 // typography btn events 
 boldTextBtn.addEventListener('click', (e) =>{
