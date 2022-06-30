@@ -30,7 +30,10 @@ class CreateSlide{
             'fontFamily': 'Roboto',
             'underline': false,
             'fontColor' : '#000000',
-            'bgColor': '#00FFFFFF'
+            'bgColor': '00FFFFFF',
+            'textRightAlign': false,
+            'textLeftAlign': false,
+            'textCenterAlign': false,
         }
         this.bodyTextAreaTypography = {
             'bold': false,
@@ -39,7 +42,10 @@ class CreateSlide{
             'fontFamily': 'Roboto',
             'underline': false,
             'fontColor' : '#000000',
-            'bgColor': '#00FFFFFF'
+            'bgColor': '00FFFFFF',
+            'textRightAlign': false,
+            'textLeftAlign': false,
+            'textCenterAlign': false,
         }
         this.body2TextAreaTypography = {
             'bold': false,
@@ -48,7 +54,10 @@ class CreateSlide{
             'fontFamily': 'Roboto',
             'underline': false,
             'fontColor' : '#000000',
-            'bgColor': '00FFFFFF'
+            'bgColor': '00FFFFFF',
+            'textRightAlign': false,
+            'textLeftAlign': false,
+            'textCenterAlign': false,
         }
         this.activeLayout,
         this.activeThemeIdx = themeIdx
@@ -164,6 +173,9 @@ class CreateSlide{
             handleFontFamily(textboxCls.textFont, fontSelector)
             handleFontSizeInputValue(textboxCls.fontColor, colorPicker)
             handleFontSizeInputValue(textboxCls.bgColor, bgColorPicker)
+            handleTypographyIconBG(textboxCls.textRightAlign, alignTextRightBtn)
+            handleTypographyIconBG(textboxCls.textLeftAlign, alignTextLeftBtn)
+            handleTypographyIconBG(textboxCls.textCenterAlign, alignTextCenterBtn)
         })
 
         bodyTextArea.addEventListener('click', (e)=>{
@@ -179,6 +191,9 @@ class CreateSlide{
             handleFontFamily('Arial', fontSelector)
             handleFontSizeInputValue("#000000", colorPicker)
             handleFontSizeInputValue("#000000", bgColorPicker)
+            handleTypographyIconBG(false, alignTextRightBtn)
+            handleTypographyIconBG(false, alignTextLeftBtn)
+            handleTypographyIconBG(false, alignTextCenterBtn)
         })
         return textboxCls
     }
@@ -224,6 +239,25 @@ class CreateSlide{
             this.activeTextBoxCls.changeBGColor()
         }
     }
+
+    changeTextRightAlign(){
+        if (this.activeTextBoxCls){
+            this.activeTextBoxCls.changeTextRightAlign()
+        }
+    }
+
+    changeTextLeftAlign(){
+        if (this.activeTextBoxCls){
+            this.activeTextBoxCls.changeTextLeftAlign()
+        }
+    }
+
+    changeTextCenterAlign(){
+        if (this.activeTextBoxCls){
+            this.activeTextBoxCls.changeTextCenterAlign()
+        }
+    }
+
 
     addImageToSlide(img_url){
         let imageDiv = new slideImage(this.newSlideDiv, img_url, this.imageList, this.imageList.length)
@@ -276,6 +310,66 @@ class CreateSlide{
             activeTextarea.style.fontWeight = 'bold'
             typography['bold'] = true
             handleTypographyIconBG(typography['bold'], boldTextBtn)
+        }
+    }
+
+    changeLayoutTextareaTextRightAlign(activeTextarea){
+        
+        let typography = this.getTypography(activeTextarea)
+        
+        if (typography['textRightAlign']){
+            activeTextarea.style.textAlign = 'left'
+            typography['textRightAlign'] = false
+            handleTypographyIconBG(typography['textRightAlign'], alignTextRightBtn)
+        }
+        else{
+            activeTextarea.style.textAlign = 'right'
+            typography['textRightAlign'] = true
+            typography['textLeftAlign'] = false
+            typography['textCenterAlign'] = false
+            handleTypographyIconBG(typography['textRightAlign'], alignTextRightBtn)
+            handleTypographyIconBG(false, alignTextLeftBtn)
+            handleTypographyIconBG(false, alignTextCenterBtn)
+        }
+    }
+
+    changeLayoutTextareaTextLeftAlign(activeTextarea){
+        
+        let typography = this.getTypography(activeTextarea)
+        
+        if (typography['textLeftAlign']){
+            activeTextarea.style.textAlign = 'left'
+            typography['textLeftAlign'] = false
+            handleTypographyIconBG(typography['textLeftAlign'], alignTextLeftBtn)
+        }
+        else{
+            activeTextarea.style.textAlign = 'left'
+            typography['textLeftAlign'] = true
+            typography['textRightAlign'] = false
+            typography['textCenterAlign'] = false
+            handleTypographyIconBG(false, alignTextRightBtn)
+            handleTypographyIconBG(false, alignTextCenterBtn)
+            handleTypographyIconBG(typography['textLeftAlign'], alignTextLeftBtn)
+        }
+    }
+
+    changeLayoutTextareaTextCenterAlign(activeTextarea){
+        
+        let typography = this.getTypography(activeTextarea)
+        
+        if (typography['textCenterAlign']){
+            activeTextarea.style.textAlign = 'left'
+            typography['textCenterAlign'] = false
+            handleTypographyIconBG(typography['textCenterAlign'], alignTextCenterBtn)
+        }
+        else{
+            activeTextarea.style.textAlign = 'center'
+            typography['textCenterAlign'] = true
+            typography['textRightAlign'] = false
+            typography['textLeftAlign'] = false
+            handleTypographyIconBG(false, alignTextRightBtn)
+            handleTypographyIconBG(false, alignTextLeftBtn)
+            handleTypographyIconBG(typography['textCenterAlign'], alignTextCenterBtn)
         }
     }
 

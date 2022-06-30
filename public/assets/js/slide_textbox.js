@@ -16,6 +16,9 @@ class textBox{
         this.textFont = 'Roboto'
         this.fontColor = "#000000"
         this.bgColor = "#00FFFFFF"
+        this.textRightAlign = false
+        this.textLeftAlign = false
+        this.textCenterAlign = false
         this.bodyPosition = {
             'top' :getRandomInt(200,300),
             'left': getRandomInt(10,50)
@@ -121,6 +124,57 @@ class textBox{
         handleFontSizeInputValue(this.bgColor, bgColorPicker)
     }
 
+    changeTextRightAlign(){
+        if (this.textRightAlign){
+            this.bodyTextArea.style.textAlign = 'left'
+            this.textRightAlign = false
+            handleTypographyIconBG(this.textRightAlign, alignTextRightBtn)
+        }
+        else{
+            this.bodyTextArea.style.textAlign = 'right'
+            this.textRightAlign = true
+            this.textLeftAlign = false
+            this.textCenterAlign = false
+            handleTypographyIconBG(this.textRightAlign, alignTextRightBtn)
+            handleTypographyIconBG(this.textLeftAlign, alignTextLeftBtn)
+            handleTypographyIconBG(this.textCenterAlign, alignTextCenterBtn)
+        }
+    }
+
+    changeTextLeftAlign(){
+        if (this.textLeftAlign){
+            this.bodyTextArea.style.textAlign = 'left'
+            this.textLeftAlign = true
+            handleTypographyIconBG(this.textLeftAlign, alignTextLeftBtn)
+        }
+        else{
+            this.bodyTextArea.style.textAlign = 'left'
+            this.textLeftAlign = true
+            this.textRightAlign = false
+            this.textCenterAlign = false
+            handleTypographyIconBG(this.textRightAlign, alignTextRightBtn)
+            handleTypographyIconBG(this.textLeftAlign, alignTextLeftBtn)
+            handleTypographyIconBG(this.textCenterAlign, alignTextCenterBtn)
+        }
+    }
+
+    changeTextCenterAlign(){
+        if (this.textCenterAlign){
+            this.bodyTextArea.style.textAlign = 'left'
+            this.textCenterAlign = false
+            handleTypographyIconBG(this.textCenterAlign, alignTextCenterBtn)
+        }
+        else{
+            this.bodyTextArea.style.textAlign = 'center'
+            this.textCenterAlign = true
+            this.textLeftAlign = false
+            this.textRightAlign = false
+            handleTypographyIconBG(this.textRightAlign, alignTextRightBtn)
+            handleTypographyIconBG(this.textLeftAlign, alignTextLeftBtn)
+            handleTypographyIconBG(this.textCenterAlign, alignTextCenterBtn)
+        }
+    }
+
     getData(){
         let position = this.bodyPosition
         let data = {
@@ -131,7 +185,10 @@ class textBox{
                 'fontFamily': this.textFont,
                 'underline': this.textUnderline,
                 'fontColor' : this.fontColor,
-                'bgColor': this.bgColor
+                'bgColor': this.bgColor,
+                'textRightAlign': this.textRightAlign,
+                'textLeftAlign': this.textLeftAlign,
+                'textCenterAlign': this.textCenterAlign,
             },
             'position' :this.bodyPosition,
             'content' : this.bodyTextArea.value,

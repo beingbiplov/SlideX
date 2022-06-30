@@ -26,7 +26,6 @@ async function saveSlideData(data){
                 'Accept': 'application/json'
             },  body: JSON.stringify(data) 
         })
-        console.log(response)
         return response
     }
     else{        

@@ -81,7 +81,6 @@ function presentSlides(slideCls, transition){
         slides[0].style.display = 'block' 
 
         document.onkeydown = (e) => {
-            console.log(e.key, e.keyCode)
             e = e || window.event
             if (e.keyCode === 39) {
                 if (slideIdx >= slides.length-1) 
@@ -132,11 +131,5 @@ function presentSlides(slideCls, transition){
     }
     }
 
-    // document.onkeydown = (e) =>{
-    //     if (e.key == 'Escape'){
-    //         console.log('asd')
-    //         closeFullscreen()
-    //     }
-    // }
 }
 

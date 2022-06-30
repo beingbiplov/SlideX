@@ -58,6 +58,16 @@ function addTypography(element, typography){
         element.style.textDecoration = "underline"
     }
 
+    if(typography.textLeftAlign){
+        element.style.textAlign = 'left'
+    }
+    if(typography.textRightAlign){
+        element.style.textAlign = 'right'
+    }
+    if(typography.textCenterAlign){
+        element.style.textAlign = 'center'
+    }
+
     element.style.fontFamily = typography.fontFamily
 
     element.style.color = typography.fontColor
@@ -131,6 +141,9 @@ function createSavedTextBox(textBoxes){
         textBoxClass.textFont = textbox.typography.fontFamily
         textBoxClass.fontColor = textbox.typography.fontColor
         textBoxClass.bgColor = textbox.typography.bgColor
+        textBoxClass.textLeftAlign = textbox.typography.textLeftAlign
+        textBoxClass.textRightAlign = textbox.typography.textRightAlign
+        textBoxClass.textCenterAlign = textbox.typography.textCenterAlign
         textBoxClass.bodyPosition['top'] = textbox.position.top
         textBoxClass.bodyPosition['left'] = textbox.position.left
     }

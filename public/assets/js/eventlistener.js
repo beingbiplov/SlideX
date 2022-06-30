@@ -196,3 +196,24 @@ bgColorPicker.addEventListener('input', (e) =>{
         slide1.handleBGColor()
     }
 })
+
+alignTextRightBtn.addEventListener('click', (e) =>{
+    if (slide1.activeSlideCls){
+        e.stopPropagation()
+        slide1.handleTextRightAlign()
+    }
+})
+
+alignTextLeftBtn.addEventListener('click', (e) =>{
+    if (slide1.activeSlideCls){
+        e.stopPropagation()
+        slide1.handleTextLeftAlign()
+    }
+})
+
+alignTextCenterBtn.addEventListener('click', (e) =>{
+    if (slide1.activeSlideCls){
+        e.stopPropagation()
+        slide1.handleTextCenterAlign()
+    }
+})

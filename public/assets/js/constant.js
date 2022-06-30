@@ -43,5 +43,8 @@ const underlineTextBtn = document.getElementById('underline_text_btn')
 const fontSelector = document.getElementById('slide_text_font')
 const colorPicker = document.getElementById('colorpicker')
 const bgColorPicker = document.getElementById('bg_colorpicker')
+const alignTextRightBtn = document.getElementById('aligh_text_right_btn')
+const alignTextLeftBtn = document.getElementById('aligh_text_left_btn')
+const alignTextCenterBtn = document.getElementById('aligh_text_center_btn')
 
 const saveBtn = document.getElementById('save_btn')

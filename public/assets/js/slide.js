@@ -184,6 +184,30 @@ class slide{
         }
     }
 
+    handleTextRightAlign(){
+        if (this.activeLayoutTextarea){
+            this.activeSlideCls.changeLayoutTextareaTextRightAlign(this.activeLayoutTextarea)
+        }else{
+            this.activeSlideCls.changeTextRightAlign()
+        }
+    }
+
+    handleTextLeftAlign(){
+        if (this.activeLayoutTextarea){
+            this.activeSlideCls.changeLayoutTextareaTextLeftAlign(this.activeLayoutTextarea)
+        }else{
+            this.activeSlideCls.changeTextLeftAlign()
+        }
+    }
+
+    handleTextCenterAlign(){
+        if (this.activeLayoutTextarea){
+            this.activeSlideCls.changeLayoutTextareaTextCenterAlign(this.activeLayoutTextarea)
+        }else{
+            this.activeSlideCls.changeTextCenterAlign()
+        }
+    }
+
     handleActiveSlideTextarea(newSlidecls){
         let headingTextarea = newSlidecls.headingTextArea 
         let bodyTextarea = newSlidecls.bodyTextArea
@@ -199,6 +223,9 @@ class slide{
                 handleFontFamily(newSlidecls.headingTextAreaTypography['fontFamily'], fontSelector)
                 handleFontSizeInputValue(newSlidecls.headingTextAreaTypography['fontColor'], colorPicker)
                 handleFontSizeInputValue(newSlidecls.headingTextAreaTypography['bgColor'], bgColorPicker)
+                handleTypographyIconBG(newSlidecls.headingTextAreaTypography['textRightAlign'], alignTextRightBtn)
+                handleTypographyIconBG(newSlidecls.headingTextAreaTypography['textLeftAlign'], alignTextLeftBtn)
+                handleTypographyIconBG(newSlidecls.headingTextAreaTypography['textCenterAlign'], alignTextLeftBtn)
             })
 
             headingTextarea.addEventListener('click', (e)=>{
@@ -216,6 +243,9 @@ class slide{
                 handleFontFamily(newSlidecls.bodyTextAreaTypography['fontFamily'], fontSelector)
                 handleFontSizeInputValue(newSlidecls.bodyTextAreaTypography['fontColor'], colorPicker)
                 handleFontSizeInputValue(newSlidecls.bodyTextAreaTypography['bgColor'], bgColorPicker)
+                handleTypographyIconBG(newSlidecls.bodyTextAreaTypography['textRightAlign'], alignTextRightBtn)
+                handleTypographyIconBG(newSlidecls.bodyTextAreaTypography['textLeftAlign'], alignTextLeftBtn)
+                handleTypographyIconBG(newSlidecls.bodyTextAreaTypography['textCenterAlign'], alignTextLeftBtn)
             })
 
             bodyTextarea.addEventListener('click', (e)=>{
@@ -233,6 +263,9 @@ class slide{
                 handleFontFamily(newSlidecls.body2TextAreaTypography['fontFamily'], fontSelector)
                 handleFontSizeInputValue(newSlidecls.body2TextAreaTypography['fontColor'], colorPicker)
                 handleFontSizeInputValue(newSlidecls.body2TextAreaTypography['bgColor'], bgColorPicker) 
+                handleTypographyIconBG(newSlidecls.body2TextAreaTypography['textRightAlign'], alignTextRightBtn)
+                handleTypographyIconBG(newSlidecls.body2TextAreaTypography['textLeftAlign'], alignTextLeftBtn)
+                handleTypographyIconBG(newSlidecls.body2TextAreaTypography['textCenterAlign'], alignTextLeftBtn)
             })
             body2Textarea.addEventListener('click', (e)=>{
                 e.stopPropagation()
@@ -248,6 +281,8 @@ class slide{
             handleFontFamily('Arial', fontSelector)
             handleFontSizeInputValue("#000000", colorPicker)
             handleFontSizeInputValue('#000000', bgColorPicker) 
+            handleTypographyIconBG(false, alignTextRightBtn)
+            handleTypographyIconBG(false, alignTextLeftBtn)
         })
     }
     
