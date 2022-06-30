@@ -15,7 +15,7 @@ class textBox{
         this.fontSize = 32
         this.textFont = 'Roboto'
         this.fontColor = "#000000"
-        this.bgColor = "#00FFFFFF"
+        this.bgColor = "00FFFFFF"
         this.textRightAlign = false
         this.textLeftAlign = false
         this.textCenterAlign = false
