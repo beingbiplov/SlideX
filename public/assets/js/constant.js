@@ -9,7 +9,7 @@ const addNewSlideBtn = document.getElementById('add_new_slide_bottom_nav_btn')
 const selLayoutBtn = document.getElementsByClassName('sel_layout--btn')
 const selThemeBth = document.getElementsByClassName('sel_theme--btn')
 
-const themeList = ['network_pattern', 'green_pattern', 'pink_patterns', 'blue_bg',  'simple_dark', 'red_blue', 'vertical_red_teal', 'streamline', 'beach_day', 'blue_horizon']
+const themeList = ['network_pattern', 'white_noise', 'red_yellow_gr', 'simple_dark', 'yellow_wall' ,'green_pattern', 'pink_patterns', 'blue_bg']
 const transitionList = ['Slide', 'Fade']
 
 const addTextBoxBtn = document.getElementById('add_textbox')
